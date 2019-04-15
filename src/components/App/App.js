@@ -5,6 +5,9 @@ import Typography from "@material-ui/core/Typography";
 
 //Global theme colors
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  },
   palette: {
     secondary: {
       main: blue[400]
