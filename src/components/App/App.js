@@ -25,7 +25,7 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           {/* React Routing will go here */}
           <Typography color="primary" variant="h1">
-            Hello World
+            Hello World!
           </Typography>
         </MuiThemeProvider>
       </div>
