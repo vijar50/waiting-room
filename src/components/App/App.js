@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { blue, blueGrey } from "@material-ui/core/colors";
-import Typography from "@material-ui/core/Typography";
+import Routes from "../Routes/Routes";
 
 //Global theme colors
 const theme = createMuiTheme({
@@ -23,10 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider theme={theme}>
-          {/* React Routing will go here */}
-          <Typography color="primary" variant="h1">
-            Hello World!
-          </Typography>
+          {/* React Routing */}
+          <Routes />
         </MuiThemeProvider>
       </div>
     );
