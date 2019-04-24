@@ -6,6 +6,9 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Person from "@material-ui/icons/Person";
+import Key from "@material-ui/icons/VpnKey";
+import { Link, withRouter } from "react-router-dom";
 
 const styles = theme => ({
   paper: {
@@ -27,6 +30,9 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     alignItems: "center",
     marginTop: 10
+  },
+  icon: {
+    fontSize: 32
   }
 });
 
@@ -47,10 +53,15 @@ class Login extends Component {
               Login
             </Typography>
             <Grid container xs={12}>
-              <Grid item xs={6}>
-                <Typography color="primary" variant="h6">
-                  Username
-                </Typography>
+              <Grid container xs={6}>
+                <Grid item xs={3}>
+                  <Person color="primary" className={classes.icon} />
+                </Grid>
+                <Grid item xs={3}>
+                  <Typography color="primary" variant="h6">
+                    Username
+                  </Typography>
+                </Grid>
               </Grid>
               <Grid item xs={6}>
                 <TextField
@@ -61,16 +72,19 @@ class Login extends Component {
               </Grid>
             </Grid>
             <Grid container xs={12}>
-              <Grid item xs={6}>
-                <Typography color="primary" variant="h6">
-                  Password
-                </Typography>
+              <Grid container xs={6}>
+                <Grid item xs={3}>
+                  <Key color="primary" className={classes.icon} />
+                </Grid>
+                <Grid item xs={3}>
+                  <Typography color="primary" variant="h6">
+                    Password
+                  </Typography>
+                </Grid>
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  id="username"
-                  className={classes.textField}
-                  type="password"
+                  id="password"
                   // value={this.state.password}
                   // onChange={this.handleChange("password")}
                 />
@@ -78,12 +92,22 @@ class Login extends Component {
             </Grid>
             <Grid container xs={12} className={classes.buttonContainer}>
               <Grid item xs={6}>
-                <Button color="secondary">Register</Button>
+                <Link
+                  to={{ pathname: "/register" }}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button color="secondary">Register</Button>
+                </Link>
               </Grid>
               <Grid item xs={6}>
-                <Button variant="contained" color="primary">
-                  Login
-                </Button>
+                <Link
+                  to={{ pathname: "/home" }}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button variant="contained" color="primary">
+                    Login
+                  </Button>
+                </Link>
               </Grid>
             </Grid>
           </Paper>
@@ -93,4 +117,4 @@ class Login extends Component {
   }
 }
 
-export default /*withRouter*/ withStyles(styles)(Login);
+export default withRouter(withStyles(styles)(Login));
