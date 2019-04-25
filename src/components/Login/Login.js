@@ -33,6 +33,9 @@ const styles = theme => ({
   },
   icon: {
     fontSize: 32
+  },
+  link: {
+    textDecoration: "none"
   }
 });
 
@@ -85,6 +88,7 @@ class Login extends Component {
               <Grid item xs={6}>
                 <TextField
                   id="password"
+                  type="password"
                   // value={this.state.password}
                   // onChange={this.handleChange("password")}
                 />
@@ -92,18 +96,12 @@ class Login extends Component {
             </Grid>
             <Grid container xs={12} className={classes.buttonContainer}>
               <Grid item xs={6}>
-                <Link
-                  to={{ pathname: "/register" }}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to={{ pathname: "/register" }} className={classes.link}>
                   <Button color="secondary">Register</Button>
                 </Link>
               </Grid>
               <Grid item xs={6}>
-                <Link
-                  to={{ pathname: "/home" }}
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to={{ pathname: "/home" }} className={classes.link}>
                   <Button variant="contained" color="primary">
                     Login
                   </Button>

@@ -13,7 +13,7 @@ const theme = createMuiTheme({
       main: blue[400]
     },
     primary: {
-      main: blueGrey[700]
+      main: blueGrey[500]
     }
   }
 });
