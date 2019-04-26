@@ -8,6 +8,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AccountBalance from "@material-ui/icons/AccountBalance";
+import LogOut from "@material-ui/icons/ExitToApp";
+import classNames from "classnames";
 
 const styles = theme => ({
   appBar: {
@@ -20,7 +22,8 @@ const styles = theme => ({
     display: "inline"
   },
   flex: {
-    display: "flex"
+    display: "flex",
+    flexGrow: 1
   },
   link: {
     textDecoration: "none",
@@ -32,9 +35,19 @@ const styles = theme => ({
     marginTop: 20,
     textTransform: "uppercase"
   },
+  logoutText: {
+    display: "inline-block",
+    marginLeft: 10,
+    marginTop: 25,
+    textTransform: "uppercase"
+  },
   iconContainer: {
     marginRight: 10,
     marginBottom: -5
+  },
+  logoutIconContainer: {
+    marginRight: 10,
+    marginBottom: -7
   },
   tabContainer: {
     marginLeft: 32
@@ -43,6 +56,11 @@ const styles = theme => ({
     paddingTop: 20,
     paddingBottom: 20,
     minWidth: "auto"
+  },
+  logout: {
+    marginLeft: 770,
+    marginTop: 5,
+    color: "black"
   }
 });
 
@@ -63,8 +81,14 @@ class TopNav extends Component {
     if (this.props.currentPath === "/myarea") {
       return 1;
     }
-    if (this.props.currentPath === "/register") {
+    if (this.props.currentPath === "/customertech") {
       return 2;
+    }
+    if (this.props.currentPath === "/courserecs") {
+      return 3;
+    }
+    if (this.props.currentPath === "/quiz") {
+      return 4;
     }
   };
 
@@ -89,6 +113,7 @@ class TopNav extends Component {
                   </Typography>
                 </div>
                 <div className={classes.tabContainer}>
+                  {/* Navigation Links */}
                   <Tabs
                     value={this.current() || this.state.value}
                     indicatorColor="primary"
@@ -108,13 +133,60 @@ class TopNav extends Component {
                       classes={{ root: classes.tabItem }}
                     />
                     <Tab
-                      label="Item three"
+                      label="Customer Technologies"
                       component={Link}
-                      to={{ pathname: "/register" }}
+                      to={{ pathname: "/customertech" }}
+                      classes={{ root: classes.tabItem }}
+                    />
+                    <Tab
+                      label="Course Recommendations"
+                      component={Link}
+                      to={{ pathname: "/courserecs" }}
+                      classes={{ root: classes.tabItem }}
+                    />
+                    <Tab
+                      label="Quiz"
+                      component={Link}
+                      to={{ pathname: "/quiz" }}
                       classes={{ root: classes.tabItem }}
                     />
                   </Tabs>
                 </div>
+                <div>
+                  <Link
+                    to="/"
+                    className={classNames(classes.link, classes.logout)}
+                  >
+                    <LogOut
+                      color="primary"
+                      className={classes.logoutIconContainer}
+                    />
+                    <Typography
+                      variant="subtitle2"
+                      color="primary"
+                      className={classes.logoutText}
+                    >
+                      Logout
+                    </Typography>
+                  </Link>
+                </div>
+                {/* Logout Button */}
+                {/* <div>
+                  <Typography
+                    variant="subtitle1"
+                    color="secondary"
+                    className={classes.logout}
+                    noWrap
+                  >
+                    <Link to="/" className={classes.link}>
+                      <LogOut
+                        color="primary"
+                        className={classes.iconContainer}
+                      />
+                      <span className={classes.tagline}>Logout</span>
+                    </Link>
+                  </Typography>
+                </div> */}
               </Grid>
             </Grid>
           </Toolbar>
