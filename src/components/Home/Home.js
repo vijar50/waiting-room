@@ -44,6 +44,7 @@ class Home extends Component {
   render() {
     const { classes } = this.props;
     const currentPath = this.props.location.pathname;
+    console.log(currentPath);
     return (
       <div>
         <CssBaseline />

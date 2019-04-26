@@ -6,7 +6,7 @@ import TopNav from "../TopNav/TopNav";
 
 const styles = theme => ({});
 
-class MyArea extends Component {
+class Quiz extends Component {
   render() {
     const currentPath = this.props.location.pathname;
     console.log(currentPath);
@@ -14,10 +14,10 @@ class MyArea extends Component {
       <div>
         <CssBaseline />
         <TopNav currentPath={currentPath} />
-        My Area
+        Quiz
       </div>
     );
   }
 }
 
-export default withRouter(withStyles(styles)(MyArea));
+export default withRouter(withStyles(styles)(Quiz));
