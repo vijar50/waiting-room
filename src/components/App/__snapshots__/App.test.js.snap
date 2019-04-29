@@ -101,9 +101,9 @@ ShallowWrapper {
               },
               "primary": Object {
                 "contrastText": "#fff",
-                "dark": "rgb(48, 62, 70)",
-                "light": "rgb(106, 123, 131)",
-                "main": "#455a64",
+                "dark": "rgb(67, 87, 97)",
+                "light": "rgb(127, 151, 162)",
+                "main": "#607d8b",
               },
               "secondary": Object {
                 "contrastText": "rgba(0, 0, 0, 0.87)",
@@ -479,9 +479,9 @@ ShallowWrapper {
             },
             "primary": Object {
               "contrastText": "#fff",
-              "dark": "rgb(48, 62, 70)",
-              "light": "rgb(106, 123, 131)",
-              "main": "#455a64",
+              "dark": "rgb(67, 87, 97)",
+              "light": "rgb(127, 151, 162)",
+              "main": "#607d8b",
             },
             "secondary": Object {
               "contrastText": "rgba(0, 0, 0, 0.87)",
@@ -867,9 +867,9 @@ ShallowWrapper {
                 },
                 "primary": Object {
                   "contrastText": "#fff",
-                  "dark": "rgb(48, 62, 70)",
-                  "light": "rgb(106, 123, 131)",
-                  "main": "#455a64",
+                  "dark": "rgb(67, 87, 97)",
+                  "light": "rgb(127, 151, 162)",
+                  "main": "#607d8b",
                 },
                 "secondary": Object {
                   "contrastText": "rgba(0, 0, 0, 0.87)",
@@ -1245,9 +1245,9 @@ ShallowWrapper {
               },
               "primary": Object {
                 "contrastText": "#fff",
-                "dark": "rgb(48, 62, 70)",
-                "light": "rgb(106, 123, 131)",
-                "main": "#455a64",
+                "dark": "rgb(67, 87, 97)",
+                "light": "rgb(127, 151, 162)",
+                "main": "#607d8b",
               },
               "secondary": Object {
                 "contrastText": "rgba(0, 0, 0, 0.87)",
