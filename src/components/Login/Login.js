@@ -9,36 +9,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Person from "@material-ui/icons/Person";
 import Key from "@material-ui/icons/VpnKey";
 import { Link, withRouter } from "react-router-dom";
+import myStyles from "./styles";
 
-const styles = theme => ({
-  paper: {
-    padding: theme.spacing.unit * 4,
-    alignItems: "center",
-    marginTop: 50
-  },
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.grey["A500"]
-  },
-  grid: {
-    padding: theme.spacing.unit * 1,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-  buttonContainer: {
-    padding: theme.spacing.unit * 2,
-    alignItems: "center",
-    marginTop: 10
-  },
-  icon: {
-    fontSize: 32
-  },
-  link: {
-    textDecoration: "none"
-  }
-});
-
+const styles = myStyles;
 class Login extends Component {
   render() {
     const { classes } = this.props;
