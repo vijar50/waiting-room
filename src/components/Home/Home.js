@@ -7,39 +7,10 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import TopNav from "../TopNav/TopNav";
 import Button from "@material-ui/core/Button";
+import myStyles from "./styles";
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.grey["A500"]
-  },
-  grid: {
-    width: 1200,
-    marginTop: 40,
-    [theme.breakpoints.down("sm")]: {
-      width: "calc(100% - 20px)"
-    }
-  },
-  paper: {
-    padding: theme.spacing.unit * 3,
-    textAlign: "left",
-    color: theme.palette.text.secondary
-  },
-  cardHeader: {
-    textTransform: "uppercase"
-  },
-  cardContentBox: {
-    marginBottom: 40,
-    height: 65
-  },
-  cardButtonBox: {
-    display: "flex",
-    justifyContent: "flex-end"
-  },
-  button: {
-    width: 150
-  }
-});
+const styles = myStyles;
+
 class Home extends Component {
   render() {
     const { classes } = this.props;

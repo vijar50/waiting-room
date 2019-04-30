@@ -3,8 +3,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link, withRouter } from "react-router-dom";
 import TopNav from "../TopNav/TopNav";
+import myStyles from "./styles";
 
-const styles = theme => ({});
+const styles = myStyles;
 
 class MyArea extends Component {
   render() {
