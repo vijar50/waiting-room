@@ -10,7 +10,7 @@ class Registration extends Component {
     return (
       <div>
         <CssBaseline />
-        Registration Form changeMe!!!
+        Registration Form changeMe!!!!
       </div>
     );
   }
