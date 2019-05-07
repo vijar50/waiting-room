@@ -19,22 +19,22 @@ class Login extends Component {
       <div className={classes.root}>
         <CssBaseline />
         <Grid container spacing={12} className={classes.grid} justify="center">
-          <Typography color="primary" variant="h1">
+          <Typography color="secondary" variant="h1">
             The Waiting Room
           </Typography>
         </Grid>
         <Grid container spacing={12} className={classes.grid} justify="center">
           <Paper className={classes.paper}>
-            <Typography color="primary" variant="h4" gutterBottom>
+            <Typography color="secondary" variant="h4" gutterBottom>
               Login
             </Typography>
             <Grid container xs={12}>
               <Grid container xs={6}>
                 <Grid item xs={3}>
-                  <Person color="primary" className={classes.icon} />
+                  <Person color="secondary" className={classes.icon} />
                 </Grid>
                 <Grid item xs={3}>
-                  <Typography color="primary" variant="h6">
+                  <Typography color="secondary" variant="h6">
                     Username
                   </Typography>
                 </Grid>
@@ -50,10 +50,10 @@ class Login extends Component {
             <Grid container xs={12}>
               <Grid container xs={6}>
                 <Grid item xs={3}>
-                  <Key color="primary" className={classes.icon} />
+                  <Key color="secondary" className={classes.icon} />
                 </Grid>
                 <Grid item xs={3}>
-                  <Typography color="primary" variant="h6">
+                  <Typography color="secondary" variant="h6">
                     Password
                   </Typography>
                 </Grid>
@@ -75,7 +75,7 @@ class Login extends Component {
               </Grid>
               <Grid item xs={6}>
                 <Link to={{ pathname: "/home" }} className={classes.link}>
-                  <Button variant="contained" color="primary">
+                  <Button variant="contained" color="secondary">
                     Login
                   </Button>
                 </Link>

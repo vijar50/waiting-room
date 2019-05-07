@@ -3,14 +3,14 @@ export default theme => ({
     position: "relative",
     boxShadow: "none",
     borderBottom: `1px solid ${theme.palette.grey["100"]}`,
-    backgroundColor: "white"
+    backgroundColor: "#212121"
   },
   inline: {
     display: "inline"
   },
   flex: {
-    display: "flex",
-    flexGrow: 1
+    display: "flex"
+    // flexGrow: 1
   },
   link: {
     textDecoration: "none",
@@ -19,34 +19,36 @@ export default theme => ({
   tagline: {
     display: "inline-block",
     marginLeft: 10,
-    marginTop: 20,
-    textTransform: "uppercase"
-  },
-  logoutText: {
-    display: "inline-block",
-    marginLeft: 10,
-    marginTop: 25,
-    textTransform: "uppercase"
+    marginTop: 10,
+    textTransform: "uppercase",
+    color: "#5385d1"
   },
   iconContainer: {
     marginRight: 10,
     marginBottom: -5
   },
-  logoutIconContainer: {
-    marginRight: 10,
-    marginBottom: -7
-  },
   tabContainer: {
-    marginLeft: 32
+    marginLeft: 32,
+    marginTop: 8
   },
   tabItem: {
     paddingTop: 20,
     paddingBottom: 20,
-    minWidth: "auto"
+    minWidth: "auto",
+    color: "white"
+  },
+  logoutText: {
+    display: "inline-block",
+    marginLeft: 10,
+    marginTop: 17,
+    textTransform: "uppercase"
+  },
+  logoutIconContainer: {
+    marginRight: 10,
+    marginBottom: -7
   },
   logout: {
     marginLeft: 770,
-    marginTop: 5,
-    color: "black"
+    marginTop: 0
   }
 });

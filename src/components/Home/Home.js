@@ -36,7 +36,7 @@ class Home extends Component {
                   <div className={classes.cardContentBox}>
                     <Typography
                       variant="h6"
-                      color="primary"
+                      color="secondary"
                       gutterBottom
                       className={classes.cardHeader}
                     >
@@ -48,7 +48,7 @@ class Home extends Component {
                   </div>
                   <div className={classes.cardButtonBox}>
                     <Button
-                      color="primary"
+                      color="secondary"
                       variant="contained"
                       className={classes.button}
                     >
@@ -63,7 +63,7 @@ class Home extends Component {
                   <div className={classes.cardContentBox}>
                     <Typography
                       variant="h6"
-                      color="primary"
+                      color="secondary"
                       gutterBottom
                       className={classes.cardHeader}
                     >
@@ -75,7 +75,7 @@ class Home extends Component {
                   </div>
                   <div className={classes.cardButtonBox}>
                     <Button
-                      color="primary"
+                      color="secondary"
                       variant="contained"
                       className={classes.button}
                     >
@@ -90,7 +90,7 @@ class Home extends Component {
                   <div className={classes.cardContentBox}>
                     <Typography
                       variant="h6"
-                      color="primary"
+                      color="secondary"
                       gutterBottom
                       className={classes.cardHeader}
                     >
@@ -102,7 +102,7 @@ class Home extends Component {
                   </div>
                   <div className={classes.cardButtonBox}>
                     <Button
-                      color="primary"
+                      color="secondary"
                       variant="contained"
                       className={classes.button}
                     >
@@ -117,7 +117,7 @@ class Home extends Component {
                   <div className={classes.cardContentBox}>
                     <Typography
                       variant="h6"
-                      color="primary"
+                      color="secondary"
                       gutterBottom
                       className={classes.cardHeader}
                     >
@@ -129,7 +129,7 @@ class Home extends Component {
                   </div>
                   <div className={classes.cardButtonBox}>
                     <Button
-                      color="primary"
+                      color="secondary"
                       variant="contained"
                       className={classes.button}
                     >
