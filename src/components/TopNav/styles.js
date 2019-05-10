@@ -50,5 +50,8 @@ export default theme => ({
   logout: {
     marginLeft: 770,
     marginTop: 0
+  },
+  dropDownText: {
+    color: "#5385d1"
   }
 });
