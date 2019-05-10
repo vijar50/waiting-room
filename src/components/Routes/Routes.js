@@ -7,6 +7,8 @@ import MyArea from "../MyArea/MyArea";
 import CustTech from "../CustTech/CustTech";
 import CourseRecs from "../CourseRecs/CourseRecs";
 import Quiz from "../Quiz/Quiz";
+import ChangePwd from "../ChangePwd/ChangePwd";
+import InputSkills from "../InputSkills/InputSkills";
 
 export default props => (
   <HashRouter>
@@ -18,6 +20,8 @@ export default props => (
       <Route exact path="/customertech" component={CustTech} />
       <Route exact path="/courserecs" component={CourseRecs} />
       <Route exact path="/quiz" component={Quiz} />
+      <Route exact path="/changepwd" component={ChangePwd} />
+      <Route exact path="/inputskills" component={InputSkills} />
     </Switch>
   </HashRouter>
 );

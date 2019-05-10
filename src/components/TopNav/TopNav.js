@@ -99,14 +99,16 @@ class TopNav extends Component {
                               <MenuItem
                                 onClick={this.handleClose}
                                 component={Link}
-                                to={{ pathname: "/customertech" }}
+                                to={{ pathname: "/changepwd" }}
+                                className={classes.dropDownText}
                               >
                                 Change Password
                               </MenuItem>
                               <MenuItem
                                 onClick={this.handleClose}
                                 component={Link}
-                                to={{ pathname: "/customertech" }}
+                                to={{ pathname: "/inputskills" }}
+                                className={classes.dropDownText}
                               >
                                 Input Skills
                               </MenuItem>
@@ -114,6 +116,7 @@ class TopNav extends Component {
                                 onClick={this.handleClose}
                                 component={Link}
                                 to={{ pathname: "/customertech" }}
+                                className={classes.dropDownText}
                               >
                                 Schedule Reminder
                               </MenuItem>
@@ -121,6 +124,7 @@ class TopNav extends Component {
                                 onClick={this.handleClose}
                                 component={Link}
                                 to={{ pathname: "/customertech" }}
+                                className={classes.dropDownText}
                               >
                                 Track Skills
                               </MenuItem>
@@ -128,6 +132,7 @@ class TopNav extends Component {
                                 onClick={this.handleClose}
                                 component={Link}
                                 to={{ pathname: "/customertech" }}
+                                className={classes.dropDownText}
                               >
                                 View Skills (Manager)
                               </MenuItem>
