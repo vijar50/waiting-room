@@ -7,7 +7,7 @@ import myStyles from "./styles";
 
 const styles = myStyles;
 
-class ChangePwd extends Component {
+class ScheduleReminder extends Component {
   render() {
     const currentPath = this.props.location.pathname;
     console.log(currentPath);
@@ -15,10 +15,10 @@ class ChangePwd extends Component {
       <div>
         <CssBaseline />
         <TopNav currentPath={currentPath} />
-        Change Password
+        Schedule Reminder
       </div>
     );
   }
 }
 
-export default withRouter(withStyles(styles)(ChangePwd));
+export default withRouter(withStyles(styles)(ScheduleReminder));

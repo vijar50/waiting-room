@@ -1,14 +1,15 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CourseRecs from "./CourseRecs";
+import MyDetails from "./MyDetails";
 
 //RENDERING
-describe("<CourseRecs/> - rendering", () => {
+describe("<MyDetails/> - rendering", () => {
   let wrapper;
-  beforeEach(() => (wrapper = shallow(<CourseRecs />)));
+  beforeEach(() => (wrapper = shallow(<MyDetails />)));
 
   it("should render correctly", () => expect(wrapper).toMatchSnapshot());
 });
+
 //INTERACTIONS
 
 //LIFECYCLE METHOD INVOCATIONS

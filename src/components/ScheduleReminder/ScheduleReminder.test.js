@@ -1,14 +1,15 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CourseRecs from "./CourseRecs";
+import ScheduleReminder from "./ScheduleReminder";
 
 //RENDERING
-describe("<CourseRecs/> - rendering", () => {
+describe("<ScheduleReminder/> - rendering", () => {
   let wrapper;
-  beforeEach(() => (wrapper = shallow(<CourseRecs />)));
+  beforeEach(() => (wrapper = shallow(<ScheduleReminder />)));
 
   it("should render correctly", () => expect(wrapper).toMatchSnapshot());
 });
+
 //INTERACTIONS
 
 //LIFECYCLE METHOD INVOCATIONS
