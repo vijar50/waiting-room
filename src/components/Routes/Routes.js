@@ -7,8 +7,9 @@ import MyArea from "../MyArea/MyArea";
 import CustTech from "../CustTech/CustTech";
 import CourseRecs from "../CourseRecs/CourseRecs";
 import Quiz from "../Quiz/Quiz";
-import ChangePwd from "../ChangePwd/ChangePwd";
-import InputSkills from "../InputSkills/InputSkills";
+import MyDetails from "../MyDetails/MyDetails";
+import MySkills from "../MySkills/MySkills";
+import ScheduleReminder from "../ScheduleReminder/ScheduleReminder";
 
 export default props => (
   <HashRouter>
@@ -20,10 +21,9 @@ export default props => (
       <Route exact path="/customertech" component={CustTech} />
       <Route exact path="/courserecs" component={CourseRecs} />
       <Route exact path="/quiz" component={Quiz} />
-      {/* TODO: Rename Change Pwd to My Details */}
-      <Route exact path="/changepwd" component={ChangePwd} />
-      {/* TODO: Rename Input Skills */}
-      <Route exact path="/inputskills" component={InputSkills} />
+      <Route exact path="/mydetails" component={MyDetails} />
+      <Route exact path="/myskills" component={MySkills} />
+      <Route exact path="/schedulereminder" component={ScheduleReminder} />
     </Switch>
   </HashRouter>
 );

@@ -99,34 +99,26 @@ class TopNav extends Component {
                               <MenuItem
                                 onClick={this.handleClose}
                                 component={Link}
-                                to={{ pathname: "/changepwd" }}
+                                to={{ pathname: "/mydetails" }}
                                 className={classes.dropDownText}
                               >
-                                Change Password
+                                My Details
                               </MenuItem>
                               <MenuItem
                                 onClick={this.handleClose}
                                 component={Link}
-                                to={{ pathname: "/inputskills" }}
+                                to={{ pathname: "/myskills" }}
                                 className={classes.dropDownText}
                               >
-                                Input Skills
+                                My Skills
                               </MenuItem>
                               <MenuItem
                                 onClick={this.handleClose}
                                 component={Link}
-                                to={{ pathname: "/customertech" }}
+                                to={{ pathname: "/schedulereminder" }}
                                 className={classes.dropDownText}
                               >
                                 Schedule Reminder
-                              </MenuItem>
-                              <MenuItem
-                                onClick={this.handleClose}
-                                component={Link}
-                                to={{ pathname: "/customertech" }}
-                                className={classes.dropDownText}
-                              >
-                                Track Skills
                               </MenuItem>
                               <MenuItem
                                 onClick={this.handleClose}

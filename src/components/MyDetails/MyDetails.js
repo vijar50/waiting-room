@@ -7,7 +7,7 @@ import myStyles from "./styles";
 
 const styles = myStyles;
 
-class InputSkills extends Component {
+class MyDetails extends Component {
   render() {
     const currentPath = this.props.location.pathname;
     console.log(currentPath);
@@ -15,10 +15,10 @@ class InputSkills extends Component {
       <div>
         <CssBaseline />
         <TopNav currentPath={currentPath} />
-        Input Skills
+        My Details
       </div>
     );
   }
 }
 
-export default withRouter(withStyles(styles)(InputSkills));
+export default withRouter(withStyles(styles)(MyDetails));

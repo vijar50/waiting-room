@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CourseRecs from "./CourseRecs";
+import MySkills from "./MySkills";
 
 //RENDERING
-describe("<CourseRecs/> - rendering", () => {
+describe("<MySkills/> - rendering", () => {
   let wrapper;
-  beforeEach(() => (wrapper = shallow(<CourseRecs />)));
+  beforeEach(() => (wrapper = shallow(<MySkills />)));
 
   it("should render correctly", () => expect(wrapper).toMatchSnapshot());
 });
