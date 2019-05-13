@@ -20,7 +20,9 @@ export default props => (
       <Route exact path="/customertech" component={CustTech} />
       <Route exact path="/courserecs" component={CourseRecs} />
       <Route exact path="/quiz" component={Quiz} />
+      {/* TODO: Rename Change Pwd to My Details */}
       <Route exact path="/changepwd" component={ChangePwd} />
+      {/* TODO: Rename Input Skills */}
       <Route exact path="/inputskills" component={InputSkills} />
     </Switch>
   </HashRouter>

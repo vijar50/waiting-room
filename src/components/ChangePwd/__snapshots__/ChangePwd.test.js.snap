@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render correctly 1`] = `
+exports[`ChangePwd should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withRouter(WithStyles(Registration)) />,
+  Symbol(enzyme.__unrendered__): <withRouter(WithStyles(ChangePwd)) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

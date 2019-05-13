@@ -54,6 +54,16 @@ ShallowWrapper {
           exact={true}
           path="/quiz"
         />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/changepwd"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/inputskills"
+        />
       </Switch>,
     },
     "ref": null,
@@ -97,6 +107,16 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/quiz"
+          />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/changepwd"
+          />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/inputskills"
           />,
         ],
       },
@@ -193,6 +213,32 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/changepwd",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/inputskills",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -240,6 +286,16 @@ ShallowWrapper {
             exact={true}
             path="/quiz"
           />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/changepwd"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/inputskills"
+          />
         </Switch>,
       },
       "ref": null,
@@ -283,6 +339,16 @@ ShallowWrapper {
               component={[Function]}
               exact={true}
               path="/quiz"
+            />,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/changepwd"
+            />,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/inputskills"
             />,
           ],
         },
@@ -374,6 +440,32 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/quiz",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/changepwd",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/inputskills",
             },
             "ref": null,
             "rendered": null,
