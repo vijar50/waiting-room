@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render correctly 1`] = `
+exports[`<App/> - rendering should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App />,
@@ -100,16 +100,16 @@ ShallowWrapper {
                 "A700": "#616161",
               },
               "primary": Object {
-                "contrastText": "#fff",
-                "dark": "rgb(67, 87, 97)",
-                "light": "rgb(127, 151, 162)",
-                "main": "#607d8b",
+                "contrastText": "rgba(0, 0, 0, 0.87)",
+                "dark": "rgb(175, 175, 175)",
+                "light": "rgb(251, 251, 251)",
+                "main": "#fafafa",
               },
               "secondary": Object {
-                "contrastText": "rgba(0, 0, 0, 0.87)",
-                "dark": "rgb(46, 115, 171)",
-                "light": "rgb(103, 183, 247)",
-                "main": "#42a5f5",
+                "contrastText": "#fff",
+                "dark": "rgb(58, 93, 146)",
+                "light": "rgb(117, 157, 218)",
+                "main": "#5385d1",
               },
               "text": Object {
                 "disabled": "rgba(0, 0, 0, 0.38)",
@@ -478,16 +478,16 @@ ShallowWrapper {
               "A700": "#616161",
             },
             "primary": Object {
-              "contrastText": "#fff",
-              "dark": "rgb(67, 87, 97)",
-              "light": "rgb(127, 151, 162)",
-              "main": "#607d8b",
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "rgb(175, 175, 175)",
+              "light": "rgb(251, 251, 251)",
+              "main": "#fafafa",
             },
             "secondary": Object {
-              "contrastText": "rgba(0, 0, 0, 0.87)",
-              "dark": "rgb(46, 115, 171)",
-              "light": "rgb(103, 183, 247)",
-              "main": "#42a5f5",
+              "contrastText": "#fff",
+              "dark": "rgb(58, 93, 146)",
+              "light": "rgb(117, 157, 218)",
+              "main": "#5385d1",
             },
             "text": Object {
               "disabled": "rgba(0, 0, 0, 0.38)",
@@ -866,16 +866,16 @@ ShallowWrapper {
                   "A700": "#616161",
                 },
                 "primary": Object {
-                  "contrastText": "#fff",
-                  "dark": "rgb(67, 87, 97)",
-                  "light": "rgb(127, 151, 162)",
-                  "main": "#607d8b",
+                  "contrastText": "rgba(0, 0, 0, 0.87)",
+                  "dark": "rgb(175, 175, 175)",
+                  "light": "rgb(251, 251, 251)",
+                  "main": "#fafafa",
                 },
                 "secondary": Object {
-                  "contrastText": "rgba(0, 0, 0, 0.87)",
-                  "dark": "rgb(46, 115, 171)",
-                  "light": "rgb(103, 183, 247)",
-                  "main": "#42a5f5",
+                  "contrastText": "#fff",
+                  "dark": "rgb(58, 93, 146)",
+                  "light": "rgb(117, 157, 218)",
+                  "main": "#5385d1",
                 },
                 "text": Object {
                   "disabled": "rgba(0, 0, 0, 0.38)",
@@ -1244,16 +1244,16 @@ ShallowWrapper {
                 "A700": "#616161",
               },
               "primary": Object {
-                "contrastText": "#fff",
-                "dark": "rgb(67, 87, 97)",
-                "light": "rgb(127, 151, 162)",
-                "main": "#607d8b",
+                "contrastText": "rgba(0, 0, 0, 0.87)",
+                "dark": "rgb(175, 175, 175)",
+                "light": "rgb(251, 251, 251)",
+                "main": "#fafafa",
               },
               "secondary": Object {
-                "contrastText": "rgba(0, 0, 0, 0.87)",
-                "dark": "rgb(46, 115, 171)",
-                "light": "rgb(103, 183, 247)",
-                "main": "#42a5f5",
+                "contrastText": "#fff",
+                "dark": "rgb(58, 93, 146)",
+                "light": "rgb(117, 157, 218)",
+                "main": "#5385d1",
               },
               "text": Object {
                 "disabled": "rgba(0, 0, 0, 0.38)",
