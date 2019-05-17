@@ -42,8 +42,8 @@ class Login extends Component {
               <Grid item xs={6}>
                 <TextField
                   id="username"
-                  // value={this.state.username}
-                  // onChange={this.handleChange("username")}
+                  value={this.props.userName}
+                  onChange={this.props.onEnterUserName}
                 />
               </Grid>
             </Grid>
@@ -62,8 +62,8 @@ class Login extends Component {
                 <TextField
                   id="password"
                   type="password"
-                  // value={this.state.password}
-                  // onChange={this.handleChange("password")}
+                  value={this.props.password}
+                  onChange={this.props.onEnterPassword}
                 />
               </Grid>
             </Grid>
