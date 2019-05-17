@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, HashRouter, Switch } from "react-router-dom";
-import Login from "../Login/Login";
+import LoginContainer from "../Login/LoginContainer";
 import Home from "../Home/Home";
 import Registration from "../Registration/Registration";
 import MyArea from "../MyArea/MyArea";
@@ -14,7 +14,8 @@ import ScheduleReminder from "../ScheduleReminder/ScheduleReminder";
 export default props => (
   <HashRouter>
     <Switch>
-      <Route exact path="/" component={Login} />
+      <Route exact path="/" component={LoginContainer} />
+      {/* Update routes - Create Container.js to point to actual component */}
       <Route exact path="/home" component={Home} />
       <Route exact path="/register" component={Registration} />
       <Route exact path="/myarea" component={MyArea} />
