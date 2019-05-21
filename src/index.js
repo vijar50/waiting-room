@@ -3,13 +3,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App/App";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import reducer from "./store/reducer";
+import { createStore, applyMiddleware, compose } from "redux";
+import loginReducer from "./store/reducers/loginReducer";
+import thunk from "redux-thunk";
 
+//configure Redux Dev Tools with compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //parse the reducer to the createStore function
 const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  loginReducer,
+  //call composeEnhancers
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(
