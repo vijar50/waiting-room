@@ -1,8 +1,9 @@
 //Initial State of the app
 const initialState = {
-  currentUser: "Bob",
   userName: "",
-  password: ""
+  password: "",
+  item: ""
+  // item: { type: "1", shape: "ball" }
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,9 +19,13 @@ const reducer = (state = initialState, action) => {
       };
     case "PASSWORD":
       return {
-        //create copy of state
         ...state,
         password: action.value
+      };
+    case "FETCH_POST":
+      return {
+        ...state,
+        item: action.value
       };
     default:
       break;
