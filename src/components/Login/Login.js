@@ -105,6 +105,7 @@ class Login extends Component {
               </Grid>
             </Grid>
           </Paper>
+          <div>{this.props.a}</div>
         </Grid>
       </div>
     );
