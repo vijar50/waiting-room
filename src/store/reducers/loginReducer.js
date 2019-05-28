@@ -3,7 +3,6 @@ const initialState = {
   userName: "",
   password: "",
   item: ""
-  // item: { type: "1", shape: "ball" }
 };
 
 const reducer = (state = initialState, action) => {

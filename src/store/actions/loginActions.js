@@ -22,21 +22,9 @@ export const makeApiCall = () => {
     fetch("https://jsonplaceholder.typicode.com/posts/1")
       .then(result => result.json())
       .then(posts => dispatch(fetchPost(posts)));
-    //Async call to API goes here
-    // fetch(``)
-    //  .then(res => res.json())
-    //  .then(....)
-    //  .catch(error)
-    //returns a function that after everything resolves
-    //it will go to the reducer and everything has what it needs
-    //simulate call to server. After 2 sec execute callback func
-    // setTimeout(()=>{
-    //   //Call the dispatch function which we are parsing as arg above
-    //   dispatch({
-    //    //expects type and payload
-    //    type: "USERNAME",
-    //    value: val.target.value
-    //   })
-    // },2000)
   };
 };
+
+// export const loginWithApi = () => {
+//   return dispatch => {};
+// };
