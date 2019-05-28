@@ -49,11 +49,6 @@ class Login extends Component {
     }
   };
 
-  //Password validation
-  onChangePassword = event => {
-    //TODO - Make a call to the API
-  };
-
   render() {
     const { classes } = this.props;
     const { step } = this.state;
@@ -160,7 +155,6 @@ class Login extends Component {
                       //Get onEnterUserName from LoginContainer.js
                       onChange={this.onChangeUser}
                       className={classes.textField}
-                      fullWidth
                       helperText={this.state.userHelperText}
                       error={this.state.error}
                     />
@@ -194,6 +188,7 @@ class Login extends Component {
                       variant="contained"
                       color="secondary"
                       className={classes.button}
+                      disabled={this.state.error}
                     >
                       Login
                     </Button>
