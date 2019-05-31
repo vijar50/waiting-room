@@ -44,7 +44,7 @@ export default theme => ({
   fieldContainer: {
     marginTop: 10,
     marginBottom: 10,
-    width: 330
+    width: 331
   },
   textField: {
     marginLeft: theme.spacing.unit * 1,

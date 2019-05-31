@@ -55,7 +55,7 @@ class Registration extends Component {
                   value={this.props.userName}
                   onChange={this.props.onEnterUserName}
                   className={classes.fieldContainer}
-                  placeholder="Please enter your username"
+                  placeholder="Please enter your Username"
 
                 /> 
               <Typography variant="subtitle1" >
