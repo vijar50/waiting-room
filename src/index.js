@@ -10,12 +10,13 @@ import thunk from "redux-thunk";
 
 //configure Redux Dev Tools with compose
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-//parse the reducer to the createStore function
 
 const rootReducer = combineReducers({
   loginR: loginReducer,
   myAreaR: myAreaReducer
 });
+
+//parse the reducer to the createStore function
 const store = createStore(
   rootReducer,
   // loginReducer,

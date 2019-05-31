@@ -21,8 +21,8 @@ class Login extends Component {
     errorUser: false,
     errorPassword: false,
     disabled: true,
-    userN: "",
-    passW: ""
+    userEntered: false,
+    passwordEntered: false
   };
 
   // Proceed to next step
@@ -41,59 +41,65 @@ class Login extends Component {
     });
   };
 
+  //Parse action to reducer and validate the field
   onChangeUser = user => {
-    //send user to reducer
     this.props.onEnterUserName(user);
-    //Error handling
     if (user.target.value.length > 0) {
       this.setState({
-        userN: user.target.value,
+        userHelperText: "",
         errorUser: false,
-        userHelperText: ""
+        userEntered: true
       });
     } else {
       this.setState({
-        userN: user.target.value,
+        userHelperText: "Please enter a user name",
         errorUser: true,
-        userHelperText: "Please enter a user name"
+        userEntered: false
       });
     }
+    this.checkCredentials();
   };
 
+  //Parse action to reducer and validate the field
   onChangePassword = password => {
-    //send password to reducer
     this.props.onEnterPassword(password);
-    //Error handling
     if (password.target.value.length > 0) {
       this.setState({
-        passW: password.target.value,
+        passwordHelperText: "",
         errorPassword: false,
-        passwordHelperText: ""
+        passwordEntered: true
       });
     } else {
       this.setState({
-        passW: password.target.value,
+        passwordHelperText: "Please enter a password",
         errorPassword: true,
-        passwordHelperText: "Please enter a password"
+        passwordEntered: false
       });
     }
+    this.checkCredentials();
   };
 
-  handleSubmit = () => {
-    const { userN, passW } = this.state;
-    console.log(`API Call Triggered onSubmit with ${userN} and ${passW}`);
-    //API ACTION FOR LOGIN CALL GOES HERE.
+  checkCredentials = () => {
+    if (
+      this.state.userEntered === true &&
+      this.state.passwordEntered === true
+    ) {
+      this.setState({
+        disabled: false
+      });
+    } else {
+      this.setState({
+        disabled: true
+      });
+    }
   };
 
   render() {
     const { classes } = this.props;
     const { step } = this.state;
-    const { userN, passW } = this.state;
-    //Criteria for Disabled button
-    const isEnabled = userN.length > 0 && passW.length > 0;
 
     switch (step) {
-      case 1: //LOGIN/REGISTER PAGE
+      case 1:
         return (
           <div className={classes.root}>
             <CssBaseline />
@@ -138,7 +144,6 @@ class Login extends Component {
                       </Button>
                     </Link>
                   </Grid>
-                  {/* API TEST */}
                   <Grid item xs={4}>
                     <Button
                       onClick={this.props.onMakeApiCall}
@@ -167,7 +172,7 @@ class Login extends Component {
             </Grid>
           </div>
         );
-      case 2: //LOGIN CREDENTIALS PAGE
+      case 2:
         return (
           <div>
             <CssBaseline />
@@ -178,7 +183,6 @@ class Login extends Component {
               justify="center"
             >
               <Paper className={classes.paper}>
-                {/* <form onSubmit={this.handleSubmit}> */}
                 <Grid container spacing={16} className={classes.fieldContainer}>
                   <Grid container xs={6} className={classes.textLabel}>
                     <Grid item xs={3}>
@@ -193,7 +197,7 @@ class Login extends Component {
                   <Grid item xs={6}>
                     <TextField
                       id="username"
-                      value={this.state.userN}
+                      value={this.props.userName}
                       //Get onEnterUserName from LoginContainer.js
                       onChange={this.onChangeUser}
                       className={classes.textField}
@@ -217,7 +221,7 @@ class Login extends Component {
                     <TextField
                       id="password"
                       type="password"
-                      value={this.state.passW}
+                      value={this.props.password}
                       //Get onEnterPassword from LoginContainer.js
                       onChange={this.onChangePassword}
                       className={classes.textField}
@@ -227,16 +231,19 @@ class Login extends Component {
                   </Grid>
                 </Grid>
                 <Grid item className={classes.mainLogin}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    className={classes.button}
-                    component={Link}
-                    to={{ pathname: "/home" }}
-                    disabled={!isEnabled}
-                  >
-                    Login
-                  </Button>
+                  <Link to={{ pathname: "/home" }} className={classes.link}>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className={classes.button}
+                      disabled={this.state.disabled}
+                      //Needs to be disabled for username and pw
+                      //write pw validation function and
+                      //username + pw eval function, use console
+                    >
+                      Login
+                    </Button>
+                  </Link>
                 </Grid>
                 <Grid item className={classes.mainLogin}>
                   <Button
@@ -244,11 +251,11 @@ class Login extends Component {
                     color="secondary"
                     className={classes.button}
                     //onClick={this.props.onLoginWithApi}
+                    //LOGIN METHOD CALL GOES HERE
                   >
                     Login Test
                   </Button>
                 </Grid>
-                {/* </form> */}
               </Paper>
             </Grid>
           </div>
