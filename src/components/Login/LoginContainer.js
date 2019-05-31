@@ -11,7 +11,7 @@ const mapStateToProps = state => {
     userName: state.loginR.userName,
     password: state.loginR.password,
     item: state.loginR.item,
-    a: state.myAreaR.a
+    a: state.myAreaR.a // TEST FIELD
     // onMakeApiCall: state.onMakeApiCall
   };
 };
