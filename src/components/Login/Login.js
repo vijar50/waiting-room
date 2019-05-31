@@ -234,6 +234,7 @@ class Login extends Component {
                     component={Link}
                     to={{ pathname: "/home" }}
                     disabled={!isEnabled}
+                    onClick={this.handleSubmit}
                   >
                     Login
                   </Button>
