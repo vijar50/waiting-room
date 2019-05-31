@@ -61,7 +61,7 @@ class Login extends Component {
   };
 
   onChangePassword = password => {
-    //send password to reducer
+    //send password to reducer TEST
     this.props.onEnterPassword(password);
     //Error handling
     if (password.target.value.length > 0) {
@@ -234,6 +234,7 @@ class Login extends Component {
                     component={Link}
                     to={{ pathname: "/home" }}
                     disabled={!isEnabled}
+                    onClick={this.handleSubmit}
                   >
                     Login
                   </Button>
