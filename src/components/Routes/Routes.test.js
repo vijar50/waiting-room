@@ -10,8 +10,8 @@ describe("<Routes/> - rendering", () => {
 
   it("should render correctly", () => expect(wrapper).toMatchSnapshot());
 
-  it("should render 10 Routes", () => {
-    expect(wrapper.find(Route).length).toEqual(10);
+  it("should render 11 Routes", () => {
+    expect(wrapper.find(Route).length).toEqual(11);
   });
 });
 //INTERACTIONS
