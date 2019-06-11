@@ -42,7 +42,7 @@ class Login extends Component {
   };
 
   onChangeUser = user => {
-    //send user to reducer
+    //send user to reducer state
     this.props.onEnterUserName(user);
     //Error handling
     if (user.target.value.length > 0) {
@@ -61,7 +61,7 @@ class Login extends Component {
   };
 
   onChangePassword = password => {
-    //send password to reducer TEST
+    //send password to reducer state
     this.props.onEnterPassword(password);
     //Error handling
     if (password.target.value.length > 0) {
