@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => {
     onEnterUserName: e => dispatch(actionCreator.enterUserName(e)),
     onEnterPassword: e => dispatch(actionCreator.enterPassword(e)),
     onMakeApiCall: () => dispatch(actionCreator.makeApiCall()),
-    onLogin: () => dispatch(actionCreator.login())
+    onLogin: (username, password) => dispatch(actionCreator.login(username, password))
     //NOTE: we will call loginAsync from loginActions.js
   };
 };

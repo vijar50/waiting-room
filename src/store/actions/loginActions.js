@@ -30,10 +30,9 @@ export const makeApiCall = () => {
   };
 };
 
-export const login = () => {
+export const login = (username, password) => {
   return dispatch => {
-    var username = "bob"
-    var hashedPassword = shajs("sha256").update("password").digest("hex");
+    var hashedPassword = shajs("sha256").update(password).digest("hex");
 
     fetch("http://localhost:9000/login", {
       method: "POST",
@@ -42,7 +41,7 @@ export const login = () => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
       },
-      body: JSON.stringify({ username: "bob", password: "password" })
+      body: JSON.stringify({ username: username, password: hashedPassword })
     })
     .then(data => console.log(data));
     //.then(result => result.json())

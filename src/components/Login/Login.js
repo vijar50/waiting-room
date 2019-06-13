@@ -81,8 +81,7 @@ class Login extends Component {
 
   handleSubmit = () => {
     const { userN, passW } = this.state;
-    console.log(`API Call Triggered onSubmit with ${userN} and ${passW}`);
-    //API ACTION FOR LOGIN CALL GOES HERE.
+    this.props.onLogin(userN, passW);
   };
 
   render() {
@@ -237,16 +236,6 @@ class Login extends Component {
                     onClick={this.handleSubmit}
                   >
                     Login
-                  </Button>
-                </Grid>
-                <Grid item className={classes.mainLogin}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    className={classes.button}
-                    onClick={this.props.onLogin}
-                  >
-                    Login Test
                   </Button>
                 </Grid>
                 {/* </form> */}
