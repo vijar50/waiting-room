@@ -1,5 +1,7 @@
 //These actions will be called by the actionCreator
 
+var shajs = require("sha.js");
+
 export const enterUserName = val => {
   return { type: "USERNAME", value: val.target.value };
 };
@@ -16,27 +18,34 @@ export const fetchPost = posts => {
   };
 };
 
+export const doLogin = loginData => {
+  console.log(loginData);
+}
+
 export const makeApiCall = () => {
   return dispatch => {
-    console.log("makeApiCall invoked.");
     fetch("https://jsonplaceholder.typicode.com/posts/1")
       .then(result => result.json())
       .then(posts => dispatch(fetchPost(posts)));
-    //Async call to API goes here
-    // fetch(``)
-    //  .then(res => res.json())
-    //  .then(....)
-    //  .catch(error)
-    //returns a function that after everything resolves
-    //it will go to the reducer and everything has what it needs
-    //simulate call to server. After 2 sec execute callback func
-    // setTimeout(()=>{
-    //   //Call the dispatch function which we are parsing as arg above
-    //   dispatch({
-    //    //expects type and payload
-    //    type: "USERNAME",
-    //    value: val.target.value
-    //   })
-    // },2000)
   };
 };
+
+export const login = () => {
+  return dispatch => {
+    var username = "bob"
+    var hashedPassword = shajs("sha256").update("password").digest("hex");
+
+    fetch("http://localhost:9000/login", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json, text/plain, *",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      body: JSON.stringify({ username: "bob", password: "password" })
+    })
+    .then(data => console.log(data));
+    //.then(result => result.json())
+    //.then(loginData => dispatch(doLogin(loginData)));
+  }
+}

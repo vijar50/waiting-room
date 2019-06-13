@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch => {
     //dispatch actions defined in reducer
     onEnterUserName: e => dispatch(actionCreator.enterUserName(e)),
     onEnterPassword: e => dispatch(actionCreator.enterPassword(e)),
-    onMakeApiCall: () => dispatch(actionCreator.makeApiCall())
+    onMakeApiCall: () => dispatch(actionCreator.makeApiCall()),
+    onLogin: () => dispatch(actionCreator.login())
     //NOTE: we will call loginAsync from loginActions.js
   };
 };

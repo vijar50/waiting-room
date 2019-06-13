@@ -79,7 +79,9 @@ class Login extends Component {
               </Grid>
               <Grid item xs={4}>
                 <Link to={{ pathname: "/home" }} className={classes.link}>
-                  <Button variant="contained" color="secondary">
+                  <Button onClick={this.props.onLogin}
+                          variant="contained"
+                          color="secondary">
                     Login
                   </Button>
                 </Link>
