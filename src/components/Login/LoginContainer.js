@@ -8,9 +8,10 @@ import * as actionCreator from "../../store/actions/loginActions";
 //reading values.
 const mapStateToProps = state => {
   return {
-    userName: state.userName,
-    password: state.password,
-    item: state.item
+    userName: state.loginR.userName,
+    password: state.loginR.password,
+    item: state.loginR.item,
+    a: state.myAreaR.a // TEST FIELD
     // onMakeApiCall: state.onMakeApiCall
   };
 };

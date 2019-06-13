@@ -1,8 +1,11 @@
 //Initial State of the app
 const initialState = {
+  firstName: "",
+  lastName: "",
   userName: "",
+  emailAddress: "",
   password: "",
-  item: ""
+  confPassword: ""
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,21 +13,36 @@ const reducer = (state = initialState, action) => {
   const newState = { ...state };
   //ACTIONS - Switch Statement
   switch (action.type) {
-    case "USERNAME":
+    case "FIRSTNAME":
+      return {
+        ...state,
+        firstName: action.value
+      };
+    case "LASTNAME":
+      return {
+        ...state,
+        lastName: action.value
+      };
+    case "USERNAMEF":
       return {
         //create copy of state
         ...state,
         userName: action.value
       };
-    case "PASSWORD":
+    case "EMAILADDRESS":
+      return {
+        ...state,
+        emailAddress: action.value
+      };
+    case "PASSWORDF":
       return {
         ...state,
         password: action.value
       };
-    case "FETCH_POST":
+    case "CONFPASSWORD":
       return {
         ...state,
-        item: action.value
+        confPassword: action.value
       };
     default:
       break;
