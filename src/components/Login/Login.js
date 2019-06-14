@@ -200,18 +200,29 @@ class Login extends Component {
                     />
                   </Grid>
                 </Grid>
-                <Grid item className={classes.mainLogin}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    className={classes.button}
-                    component={Link}
-                    to={{ pathname: "/home" }}
-                    disabled={!isEnabled}
-                    onClick={this.handleSubmit}
-                  >
-                    Login
-                  </Button>
+                <Grid container>
+                  <Grid item xs={6} className={classes.mainLogin}>
+                    <Button
+                      color="secondary"
+                      className={classes.button}
+                      onClick={this.prevStep}
+                    >
+                      Cancel
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6} className={classes.mainLogin}>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className={classes.button}
+                      component={Link}
+                      to={{ pathname: "/home" }}
+                      disabled={!isEnabled}
+                      onClick={this.handleSubmit}
+                    >
+                      Login
+                    </Button>
+                  </Grid>
                 </Grid>
                 {/* </form> */}
               </Paper>
