@@ -10,7 +10,6 @@ import Person from "@material-ui/icons/Person";
 import Key from "@material-ui/icons/VpnKey";
 import { Link, withRouter } from "react-router-dom";
 import myStyles from "./styles";
-import { connect } from "react-redux";
 
 const styles = myStyles;
 class Login extends Component {

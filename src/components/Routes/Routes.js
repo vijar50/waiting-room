@@ -2,7 +2,6 @@ import React from "react";
 import { Route, HashRouter, Switch } from "react-router-dom";
 import LoginContainer from "../Login/LoginContainer";
 import Home from "../Home/Home";
-import Registration from "../Registration/Registration";
 import RegistrationContainer from "../Registration/RegistrationContainer";
 import MyArea from "../MyArea/MyArea";
 import CustTech from "../CustTech/CustTech";
