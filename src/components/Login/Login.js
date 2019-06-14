@@ -111,8 +111,8 @@ class Login extends Component {
                   The Waiting Room
                 </Typography>
 
-                <Grid container xs={12} className={classes.buttonContainer}>
-                  <Grid item xs={4}>
+                <Grid container className={classes.buttonContainer}>
+                  <Grid item xs={6}>
                     <Button
                       variant="contained"
                       color="secondary"
@@ -122,7 +122,7 @@ class Login extends Component {
                       Login
                     </Button>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs={6}>
                     <Link
                       to={{ pathname: "/register" }}
                       className={classes.link}
@@ -135,30 +135,6 @@ class Login extends Component {
                         Register
                       </Button>
                     </Link>
-                  </Grid>
-                  {/* API TEST */}
-                  <Grid item xs={4}>
-                    <Button
-                      onClick={this.props.onMakeApiCall}
-                      variant="contained"
-                      color="secondary"
-                      className={classes.button}
-                    >
-                      API-Call
-                    </Button>
-                  </Grid>
-
-                  <Grid item xs={12}>
-                    <Typography color="secondary" variant="body1">
-                      <div>
-                        <div>{this.props.item.id}</div>
-                        <br />
-                        <div>{this.props.item.title}</div>
-                        <br />
-                        <div>{this.props.item.body}</div>
-                      </div>
-                      <div>Second Reducer: {this.props.a}</div>
-                    </Typography>
                   </Grid>
                 </Grid>
               </Paper>
