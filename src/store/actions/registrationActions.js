@@ -24,19 +24,21 @@ export const enterConfPassword = val => {
   return { type: "CONFPASSWORD", value: val.target.value };
 };
 
-// export const fetchPost = posts => {
-//   console.log("Fetched Posts");
-//   return {
-//     type: "FETCH_POST",
-//     value: posts
-//   };
-// };
-
-// export const makeApiCall = () => {
-//   return dispatch => {
-//     console.log("makeApiCall invoked.");
-//     fetch("https://jsonplaceholder.typicode.com/posts/1")
-//       .then(result => result.json())
-//       .then(posts => dispatch(fetchPost(posts)));
-//   };
-// };
+export const register = (firstName, lastName, userName, emailAddress, password) => {
+  return dispatch => {
+    fetch("http://localhost:9000/create-user", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json, text/plain, *",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      body: JSON.stringify({ firstName: firstName,
+                             lastName: lastName,
+                             userName: userName,
+                             emailAddress: emailAddress,
+                             password: password })
+    })
+    .then(data => console.log(data));
+  }
+};

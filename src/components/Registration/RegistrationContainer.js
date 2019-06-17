@@ -25,7 +25,9 @@ const mapDispatchToProps = dispatch => {
     onEnterUserName: e => dispatch(actionCreator.enterUserName(e)),
     onEnterEmailAddress: e => dispatch(actionCreator.enterEmailAddress(e)),
     onEnterPassword: e => dispatch(actionCreator.enterPassword(e)),
-    onEnterConfPassword: e => dispatch(actionCreator.enterConfPassword(e))
+    onEnterConfPassword: e => dispatch(actionCreator.enterConfPassword(e)),
+    onRegister: (firstName, lastName, userName, emailAddress, password) =>
+                dispatch(actionCreator.register(firstName, lastName, userName, emailAddress, password))
   };
 };
 

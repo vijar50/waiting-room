@@ -142,6 +142,16 @@ class Registration extends Component {
     }
   };
 
+  handleSubmit = () => {
+    const { firstName,
+            lastName,
+            userName,
+            emailAddress,
+            password } = this.state;
+
+    this.props.onRegister(firstName, lastName, userName, emailAddress, password);
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -229,6 +239,7 @@ class Registration extends Component {
                   color="secondary"
                   component={Link}
                   to={{ pathname: "/home" }}
+                  onClick={this.handleSubmit}
                 >
                   Enter
                 </Button>
