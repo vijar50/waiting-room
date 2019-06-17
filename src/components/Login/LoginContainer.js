@@ -10,8 +10,7 @@ const mapStateToProps = state => {
   return {
     userName: state.loginR.userName,
     password: state.loginR.password,
-    item: state.loginR.item,
-    a: state.myAreaR.a // TEST FIELD
+    item: state.loginR.item
     // onMakeApiCall: state.onMakeApiCall
   };
 };
@@ -22,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     onEnterUserName: e => dispatch(actionCreator.enterUserName(e)),
     onEnterPassword: e => dispatch(actionCreator.enterPassword(e)),
     onMakeApiCall: () => dispatch(actionCreator.makeApiCall()),
-    onLogin: (username, password) => dispatch(actionCreator.login(username, password))
+    onLogin: (username, password) =>
+      dispatch(actionCreator.login(username, password))
     //NOTE: we will call loginAsync from loginActions.js
   };
 };

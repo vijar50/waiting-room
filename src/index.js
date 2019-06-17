@@ -5,7 +5,6 @@ import App from "./components/App/App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import loginReducer from "./store/reducers/loginReducer";
-import myAreaReducer from "./store/reducers/myAreaReducer";
 import registrationReducer from "./store/reducers/registrationReducer";
 import thunk from "redux-thunk";
 
@@ -14,7 +13,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   loginR: loginReducer,
-  myAreaR: myAreaReducer,
   registrationR: registrationReducer
 });
 

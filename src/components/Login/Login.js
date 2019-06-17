@@ -10,7 +10,6 @@ import Person from "@material-ui/icons/Person";
 import Key from "@material-ui/icons/VpnKey";
 import { Link, withRouter } from "react-router-dom";
 import myStyles from "./styles";
-import { connect } from "react-redux";
 
 const styles = myStyles;
 class Login extends Component {
@@ -112,8 +111,8 @@ class Login extends Component {
                   The Waiting Room
                 </Typography>
 
-                <Grid container xs={12} className={classes.buttonContainer}>
-                  <Grid item xs={4}>
+                <Grid container className={classes.buttonContainer}>
+                  <Grid item xs={6}>
                     <Button
                       variant="contained"
                       color="secondary"
@@ -123,7 +122,7 @@ class Login extends Component {
                       Login
                     </Button>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs={6}>
                     <Link
                       to={{ pathname: "/register" }}
                       className={classes.link}
@@ -136,30 +135,6 @@ class Login extends Component {
                         Register
                       </Button>
                     </Link>
-                  </Grid>
-                  {/* API TEST */}
-                  <Grid item xs={4}>
-                    <Button
-                      onClick={this.props.onMakeApiCall}
-                      variant="contained"
-                      color="secondary"
-                      className={classes.button}
-                    >
-                      API-Call
-                    </Button>
-                  </Grid>
-
-                  <Grid item xs={12}>
-                    <Typography color="secondary" variant="body1">
-                      <div>
-                        <div>{this.props.item.id}</div>
-                        <br />
-                        <div>{this.props.item.title}</div>
-                        <br />
-                        <div>{this.props.item.body}</div>
-                      </div>
-                      <div>Second Reducer: {this.props.a}</div>
-                    </Typography>
                   </Grid>
                 </Grid>
               </Paper>
@@ -225,18 +200,29 @@ class Login extends Component {
                     />
                   </Grid>
                 </Grid>
-                <Grid item className={classes.mainLogin}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    className={classes.button}
-                    component={Link}
-                    to={{ pathname: "/home" }}
-                    disabled={!isEnabled}
-                    onClick={this.handleSubmit}
-                  >
-                    Login
-                  </Button>
+                <Grid container>
+                  <Grid item xs={6} className={classes.mainLogin}>
+                    <Button
+                      color="secondary"
+                      className={classes.button}
+                      onClick={this.prevStep}
+                    >
+                      Cancel
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6} className={classes.mainLogin}>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className={classes.button}
+                      component={Link}
+                      to={{ pathname: "/home" }}
+                      disabled={!isEnabled}
+                      onClick={this.handleSubmit}
+                    >
+                      Login
+                    </Button>
+                  </Grid>
                 </Grid>
                 {/* </form> */}
               </Paper>

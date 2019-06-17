@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { blue, grey } from "@material-ui/core/colors";
+import { grey } from "@material-ui/core/colors";
 import Routes from "../Routes/Routes";
 
 //Global theme colors
