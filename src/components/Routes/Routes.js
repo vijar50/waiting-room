@@ -11,6 +11,7 @@ import MyDetails from "../MyDetails/MyDetails";
 import MySkills from "../MySkills/MySkills";
 import ScheduleReminder from "../ScheduleReminder/ScheduleReminder";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import RegistrationSuccess from "../Registration/RegistrationSuccess";
 
 export default props => (
   <HashRouter>
@@ -26,6 +27,7 @@ export default props => (
       <Route exact path="/mydetails" component={MyDetails} />
       <Route exact path="/myskills" component={MySkills} />
       <Route exact path="/schedulereminder" component={ScheduleReminder} />
+      <Route exact path="/registrationsuccess" component={RegistrationSuccess} />
       <Route component={PageNotFound} />
     </Switch>
   </HashRouter>
