@@ -141,6 +141,24 @@ class Registration extends Component {
     }
   };
 
+  handleSubmit = () => {
+    const {
+      firstName,
+      lastName,
+      userName,
+      emailAddress,
+      password
+    } = this.state;
+
+    this.props.onRegister(
+      firstName,
+      lastName,
+      userName,
+      emailAddress,
+      password
+    );
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -230,7 +248,7 @@ class Registration extends Component {
                   to={{ pathname: "/registrationsuccess" }}
                   onClick={this.handleSubmit}
                 >
-                  Enter
+                  Register
                 </Button>
               </Grid>
             </Grid>
