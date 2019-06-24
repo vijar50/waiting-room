@@ -5,7 +5,7 @@ const assert = require("assert");
 const { Builder, Key, By, until } = require("selenium-webdriver");
 jest.setTimeout(30000);
 
-describe("Login Tests", function() {
+describe("Login - Success/Navigation", function() {
   let driver;
   beforeEach(async function() {
     driver = await new Builder().forBrowser("chrome").build();
