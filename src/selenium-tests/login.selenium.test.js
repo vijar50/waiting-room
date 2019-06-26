@@ -1,6 +1,7 @@
 //POM References
 // Import requirement packages
 require("chromedriver");
+// var fs = require("fs");
 const assert = require("assert");
 const { Builder, Key, By, until } = require("selenium-webdriver");
 jest.setTimeout(30000);
@@ -16,6 +17,10 @@ describe("Login Tests", function() {
       .click();
     await driver.sleep(1000);
   });
+  // close the browser after running each test
+  afterEach(() => {
+    driver && driver.quit();
+  });  
 
   it("should log in successfully", async () => {
     await driver.wait(
@@ -94,15 +99,13 @@ describe("Login Tests", function() {
     );
     await driver
       .findElement(By.xpath("//input[@id='password']"))
-      .sendKeys(
-        "bubbles",
-        Key.chord(Key.CONTROL, "a"),
-        Key.BACK_SPACE
-      );
-    let message = await driver.findElement(By.xpath("//p[@id='password-helper-text']"))
-    message.getAttribute('id').then(value => {
-      assert.equal(value, "password-helper-text")
-    })
+      .sendKeys("bubbles", Key.chord(Key.CONTROL, "a"), Key.BACK_SPACE);
+    let message = await driver.findElement(
+      By.xpath("//p[@id='password-helper-text']")
+    );
+    message.getAttribute("id").then(value => {
+      assert.equal(value, "password-helper-text");
+    });
     await driver.sleep(1000);
   });
 
@@ -113,18 +116,13 @@ describe("Login Tests", function() {
     );
     await driver
       .findElement(By.xpath("//input[@id='username']"))
-      .sendKeys(
-        "bubbles",
-        Key.chord(Key.CONTROL, "a"),
-        Key.BACK_SPACE
-      );
-    let message = await driver.findElement(By.xpath("//p[@id='username-helper-text']"))
-    message.getAttribute('id').then(value => {
-      assert.equal(value, "username-helper-text")
-    })
+      .sendKeys("bubbles", Key.chord(Key.CONTROL, "a"), Key.BACK_SPACE);
+    let message = await driver.findElement(
+      By.xpath("//p[@id='username-helper-text']")
+    );
+    message.getAttribute("id").then(value => {
+      assert.equal(value, "username-helper-text");
+    });
     await driver.sleep(1000);
   });
-
-  // close the browser after running each test
-  afterEach(() => driver && driver.quit());
 });
