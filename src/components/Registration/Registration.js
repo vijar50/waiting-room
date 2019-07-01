@@ -174,10 +174,10 @@ class Registration extends Component {
             <Typography variant="subtitle1">First Name</Typography>
             <TextField
               id="firstname"
+              label="Please enter your first Name"
               value={this.state.firstName}
               onChange={this.onChangeFirstName}
               className={classes.fieldContainer}
-              placeholder="Please enter your first name"
               helperText={this.state.firstNameHelperText}
               error={this.state.errorFirstName}
             />
@@ -185,10 +185,10 @@ class Registration extends Component {
             <Typography variant="subtitle1">Last Name</Typography>
             <TextField
               id="lastname"
+              label="Please enter your last Name"
               value={this.state.lastName}
               onChange={this.onChangeLastName}
               className={classes.fieldContainer}
-              placeholder="Please enter your last name"
               helperText={this.state.lastNameHelperText}
               error={this.state.errorLastName}
             />
@@ -196,63 +196,66 @@ class Registration extends Component {
             <Typography variant="subtitle1">Username</Typography>
             <TextField
               id="username"
+              label="Please enter your Username"
               value={this.state.userName}
               onChange={this.onChangeUserName}
               className={classes.fieldContainer}
-              placeholder="Please enter your Username"
               helperText={this.state.userNameHelperText}
               error={this.state.errorUserName}
             />
             <Typography variant="subtitle1">E-Mail Address</Typography>
             <TextField
               id="email"
+              label="Please enter your E-Mail Address"
               value={this.state.emailAddress}
               onChange={this.onChangeEmailAddress}
               className={classes.fieldContainer}
-              placeholder="Please enter your E-mail address"
               helperText={this.state.emailAddressHelperText}
               error={this.state.errorEmailAddress}
             />
             <Typography variant="subtitle1">Password</Typography>
             <TextField
               id="password"
+              label="Please enter your password "
               type="password"
               value={this.state.password}
               onChange={this.onChangePassword}
               className={classes.fieldContainer}
-              placeholder="Please enter your password"
               helperText={this.state.passwordHelperText}
               error={this.state.errorPassword}
             />
             <Typography variant="subtitle1">Re-enter Password</Typography>
             <TextField
               id="reenterpassword"
+              label="Please enter your first Name"
               value={this.state.confPassword}
               onChange={this.onChangeConfPassword}
               className={classes.fieldContainer}
-              placeholder="Please re-enter your password"
               helperText={this.state.confPasswordHelperText}
               error={this.state.errorConfPassword}
             />
-            <Grid container xs={12} className={classes.buttonContainer}>
-              <Grid item xs={6}>
-                <Link to={{ pathname: "/" }} className={classes.link}>
-                  <Button color="secondary">Cancel</Button>
-                </Link>
-              </Grid>
-              <Grid item xs={6}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  component={Link}
-                  to={{ pathname: "/registrationsuccess" }}
-                  onClick={this.handleSubmit}
-                >
-                  Register
-                </Button>
-              </Grid>
-            </Grid>
           </Paper>
+          <Grid
+            container
+            xs={12}
+            className={classes.buttonContainer}
+            justify="center"
+          >
+            <Grid item xs={1.5}>
+              <Link to={{ pathname: "/" }} className={classes.link}>
+                <Button color="secondary">Cancel</Button>
+              </Link>
+              <Button
+                variant="contained"
+                color="secondary"
+                component={Link}
+                to={{ pathname: "/registrationsuccess" }}
+                onClick={this.handleSubmit}
+              >
+                Register
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
       </div>
     );
