@@ -235,19 +235,22 @@ class Registration extends Component {
               error={this.state.errorConfPassword}
             />
           </Paper>
+          <div className={classes.grid}>
           <Grid
             container
-            xs={12}
             className={classes.buttonContainer}
-            justify="center"
           >
-            <Grid item xs={1.5}>
+            <Grid item xs={6}>
               <Link to={{ pathname: "/" }} className={classes.link}>
-                <Button color="secondary">Cancel</Button>
+                <Button color="secondary"
+                className={classes.button}>Cancel</Button>
               </Link>
+            </Grid>
+            <Grid item xs={6}>
               <Button
                 variant="contained"
                 color="secondary"
+                className={classes.button}
                 component={Link}
                 to={{ pathname: "/registrationsuccess" }}
                 onClick={this.handleSubmit}
@@ -256,7 +259,9 @@ class Registration extends Component {
               </Button>
             </Grid>
           </Grid>
+          </div>
         </Grid>
+        
       </div>
     );
   }

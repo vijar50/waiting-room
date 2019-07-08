@@ -16,7 +16,7 @@ export default theme => ({
     alignItems: "center"
   },
   buttonContainer: {
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing.unit * 1,
     alignItems: "center",
     marginTop: 10
   },
@@ -29,8 +29,6 @@ export default theme => ({
   button: {
     width: 200,
     padding: theme.spacing.unit * 1,
-    marginLeft: 40,
-    marginRight: 40,
     marginTop: 10,
     marginBottom: 10
   },
@@ -49,7 +47,6 @@ export default theme => ({
   textField: {
     marginLeft: theme.spacing.unit * 1,
     marginRight: 90,
-
   },
   textLabel: {
     marginRight: -30
