@@ -1,3 +1,33 @@
 export default theme => ({
-  //Styles for Customer Tech go here
+  paper: {
+    padding: theme.spacing.unit * 4,
+    alignItems: "center",
+  },
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.grey["A500"]
+  },
+  grid: {
+    padding: theme.spacing.unit * 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  header: {
+    padding: theme.spacing.unit * 4,
+  },
+  textField: {
+    marginRight: 15,
+    width: 220,
+  },
+  textLabel: {
+    marginRight: -30
+  },
+  fieldContainer: {
+    padding: theme.spacing.unit * 1,
+    alignItems: "center"
+  },
+  subheading: {
+    marginTop: 25
+  }
 });

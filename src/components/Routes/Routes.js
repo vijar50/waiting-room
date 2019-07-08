@@ -3,11 +3,10 @@ import { Route, HashRouter, Switch } from "react-router-dom";
 import LoginContainer from "../Login/LoginContainer";
 import Home from "../Home/Home";
 import RegistrationContainer from "../Registration/RegistrationContainer";
-import MyArea from "../MyArea/MyArea";
 import CustTech from "../CustTech/CustTech";
 import CourseRecs from "../CourseRecs/CourseRecs";
 import Quiz from "../Quiz/Quiz";
-import MyDetails from "../MyDetails/MyDetails";
+import MyDetailsContainer from "../MyDetails/MyDetailsContainer"
 import MySkills from "../MySkills/MySkills";
 import ScheduleReminder from "../ScheduleReminder/ScheduleReminder";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -20,11 +19,10 @@ export default props => (
       {/* Update routes - Create Container.js to point to actual component */}
       <Route exact path="/home" component={Home} />
       <Route exact path="/register" component={RegistrationContainer} />
-      <Route exact path="/myarea" component={MyArea} />
       <Route exact path="/customertech" component={CustTech} />
       <Route exact path="/courserecs" component={CourseRecs} />
       <Route exact path="/quiz" component={Quiz} />
-      <Route exact path="/mydetails" component={MyDetails} />
+      <Route exact path="/mydetails" component={MyDetailsContainer} />
       <Route exact path="/myskills" component={MySkills} />
       <Route exact path="/schedulereminder" component={ScheduleReminder} />
       <Route exact path="/registrationsuccess" component={RegistrationSuccess} />
