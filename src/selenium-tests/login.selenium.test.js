@@ -1,7 +1,6 @@
 //POM References
 // Import requirement packages
 require("chromedriver");
-// var fs = require("fs");
 const assert = require("assert");
 const { Builder, Key, By, until } = require("selenium-webdriver");
 jest.setTimeout(30000);
