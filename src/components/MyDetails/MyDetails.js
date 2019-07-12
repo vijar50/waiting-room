@@ -61,7 +61,7 @@ class MyDetails extends Component {
                 <TextField id="phone" className={classes.textField} />
               </Grid>
             </Grid>
-            <Divider variant="middle"  />
+            <Divider variant="middle" light />
             <Grid container>
               <Typography variant="h6" gutterBottom color="secondary" className={classes.subheading}>
                 Account
