@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import TopNav from "../TopNav/TopNav";
+import TopNavContainer from "../TopNav/TopNavContainer";
 import Button from "@material-ui/core/Button";
 import myStyles from "./styles";
 
@@ -19,7 +19,7 @@ class Home extends Component {
     return (
       <div>
         <CssBaseline />
-        <TopNav currentPath={currentPath} />
+        <TopNavContainer currentPath={currentPath} />
         <div className={classes.root}>
           {/* Cards Container */}
           <Grid container justify="center">

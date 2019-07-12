@@ -81,6 +81,7 @@ class Login extends Component {
   handleSubmit = () => {
     const { userN, passW } = this.state;
     this.props.onLogin(userN, passW);
+    localStorage.setItem('username', this.state.userN)
   };
 
   render() {
