@@ -19,7 +19,7 @@ class Home extends Component {
     return (
       <div>
         <CssBaseline />
-        <TopNavContainer currentPath={currentPath} />
+        <TopNavContainer currentPath={currentPath}/>
         <div className={classes.root}>
           {/* Cards Container */}
           <Grid container justify="center">

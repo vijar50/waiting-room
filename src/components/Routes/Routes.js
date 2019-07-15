@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, HashRouter, Switch } from "react-router-dom";
 import LoginContainer from "../Login/LoginContainer";
-import Home from "../Home/Home";
+import HomeContainer from "../Home/HomeContainer"
 import RegistrationContainer from "../Registration/RegistrationContainer";
 import CustTech from "../CustTech/CustTech";
 import CourseRecs from "../CourseRecs/CourseRecs";
@@ -17,7 +17,7 @@ export default props => (
     <Switch>
       <Route exact path="/" component={LoginContainer} />
       {/* Update routes - Create Container.js to point to actual component */}
-      <Route exact path="/home" component={Home} />
+      <Route exact path="/home" component={HomeContainer} />
       <Route exact path="/register" component={RegistrationContainer} />
       <Route exact path="/customertech" component={CustTech} />
       <Route exact path="/courserecs" component={CourseRecs} />

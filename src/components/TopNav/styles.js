@@ -59,10 +59,8 @@ export default theme => ({
     color: "#5385d1"
   },
   lbutton: {
-
-    // marginLeft: 150,
-    marginTop: -2,
-    // marginBottom: -1,
+    marginTop: -5,
+    marginLeft: -30,
     color: "#5385d1"
   },
   iconContainer: {
@@ -98,14 +96,15 @@ export default theme => ({
   },
   infoSection: {
     display: "flex",
-    // marginLeft: 200,
+    width: 200,
+    marginLeft: 100
   },
   user: {
     marginRight: 10,
     textTransform: "uppercase",
     fontSize: 18,
-    fontWeight: 500,
-    
+    marginTop: -2,
+    fontWeight: 500
   },
   ico: {
     marginLeft: -20

@@ -9,17 +9,58 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Divider from "@material-ui/core/Divider";
+import Edit from "@material-ui/icons/Edit";
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
 const styles = myStyles;
 
 class MyDetails extends Component {
+
+  state = {
+    userName: "",
+    editMode: false,
+    mouseOver: false
+  };
+
+  onChangeUserName = user => {
+    // this.props.onEnterUserName(user);
+      this.setState({
+        userName: user.target.value,
+      });    
+  };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleMouseOver = event => {
+    if (!this.state.mouseOver) {
+      this.setState({ mouseOver: true });
+    }
+  };
+
+  handleMouseOut = event => {
+    // The problem is here!!!
+    if (this.state.mouseOver) {
+      this.setState({ mouseOver: false });
+    }
+  };
+
+  handleClick = () => {
+    this.setState({
+      editMode: true,
+      mouseOver: false
+    });
+  };
+
   render() {
     const currentPath = this.props.location.pathname;
-    const { classes } = this.props;
+    const { classes, value } = this.props;
     console.log(currentPath);
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <TopNav currentPath={currentPath} />
+        <TopNav currentPath={currentPath}/>
         <Grid container>
           <Typography
             variant="h5"
@@ -42,7 +83,10 @@ class MyDetails extends Component {
                 <Typography variant="subtitle1">Name</Typography>
               </Grid>
               <Grid item xs={8}>
-                <TextField id="name" className={classes.textField} />
+                <TextField 
+                id="name" 
+                className={classes.textField}
+              />
               </Grid>
             </Grid>
             <Grid container className={classes.fieldContainer}>
@@ -61,7 +105,8 @@ class MyDetails extends Component {
                 <TextField id="phone" className={classes.textField} />
               </Grid>
             </Grid>
-            <Divider variant="middle" light />
+            <br/>
+
             <Grid container>
               <Typography variant="h6" gutterBottom color="secondary" className={classes.subheading}>
                 Account
@@ -72,7 +117,30 @@ class MyDetails extends Component {
                 <Typography variant="subtitle1">Username</Typography>
               </Grid>
               <Grid item xs={8}>
-                <TextField id="username" className={classes.textField} />
+                <TextField 
+                id="username" 
+                className={classes.textField}                
+                defaultValue={localStorage.getItem('currentUser')}
+                margin="normal"
+                // error={this.state.email === ""}
+                onChange={this.onChangeUserName}
+                disabled={!this.state.editMode}
+                onMouseEnter={this.handleMouseOver}
+                onMouseLeave={this.handleMouseOut}
+                InputProps={{
+                  classes: {
+                    disabled: classes.disabled
+                  },
+                  endAdornment: this.state.mouseOver ? (
+                    <InputAdornment position="end">
+                      <IconButton onClick={this.handleClick}>
+                        <Edit />
+                      </IconButton>
+                    </InputAdornment>
+                  ) : (
+                    ""
+                  )
+                }}/>
               </Grid>
             </Grid>
             <Grid container className={classes.fieldContainer}>
