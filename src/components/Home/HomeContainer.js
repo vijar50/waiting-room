@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import MyDetails from "./MyDetails";
+import Home from "./Home";
 import * as actionCreator from "../../store/actions/loginActions";
 
 //Login route "/" will come here, then go to the MUI component
@@ -9,7 +9,6 @@ import * as actionCreator from "../../store/actions/loginActions";
 const mapStateToProps = state => {
   return {
     userName: state.loginR.userName,
-    password: state.loginR.password
   };
 };
 
@@ -28,4 +27,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MyDetails);
+)(Home);

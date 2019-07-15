@@ -43,6 +43,8 @@ class Login extends Component {
   onChangeUser = user => {
     //send user to reducer state
     this.props.onEnterUserName(user);
+    //local storage
+    localStorage.setItem("currentUser", user.target.value);
     //Error handling
     if (user.target.value.length > 0) {
       this.setState({
@@ -81,7 +83,7 @@ class Login extends Component {
   handleSubmit = () => {
     const { userN, passW } = this.state;
     this.props.onLogin(userN, passW);
-    localStorage.setItem('username', this.state.userN)
+    localStorage.setItem("username", this.state.userN);
   };
 
   render() {

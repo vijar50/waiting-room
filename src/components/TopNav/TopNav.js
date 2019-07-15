@@ -6,15 +6,12 @@ import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import AppBar from "@material-ui/core/AppBar";
 import AccountBalance from "@material-ui/icons/AccountBalance";
-import LogOut from "@material-ui/icons/ExitToApp";
-import classNames from "classnames";
 import myStyles from "./styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
-import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -55,6 +52,9 @@ class TopNav extends Component {
   render() {
     const { classes } = this.props;
     const { open, openAccount, anchorEl, anchorEll } = this.state;
+    //retrieve current user
+    const user = localStorage.getItem("currentUser");
+
     return (
       <div className="topNavComponent">
         <AppBar position="static" className={classes.appBar}>
@@ -179,57 +179,62 @@ class TopNav extends Component {
                   Quiz
                 </ButtonBase>
               </Grid>
-              <div className={classes.infoSection}>>
+              <div className={classes.infoSection}>
+                >
                 <Typography color="secondary" className={classes.user}>
-                  {this.props.userName}
+                  {user}
+                  {/* {this.props.userName} */}
                   {/* UsernameTest1 */}
                 </Typography>
               </div>
-              <Grid item xs={1} className={classes.infoSection}>
-              
-              <IconButton
-                buttonRef={node => {
-                  this.anchorEll = node;
-                }}
-                aria-owns={openAccount ? "menu-list-grow2" : undefined}
-                aria-haspopup="true"
-                onClick={this.handleToggleAccount}
-                className={classes.lbutton}
-              >
-                <AccountCircle />
-              </IconButton>
-              <Popper
-                open={openAccount}
-                anchorEl={this.anchorEll}
-                transition
-                disablePortal
-              >
-                {({ TransitionProps, placement }) => (
-                  <Grow
-                    {...TransitionProps}
-                    id="menu-list-grow2"
-                    style={{
-                      transformOrigin:
-                        placement === "bottom" ? "center top" : "center bottom"
-                    }}
-                  >
-                    <Paper>
-                      <ClickAwayListener onClickAway={this.handleCloseAccount}>
-                        <MenuList>
-                          <MenuItem
-                            onClick={this.handleCloseAccount}
-                            component={Link}
-                            to={{ pathname: "/" }}
-                            className={classes.dropDownText}
-                          >
-                            Logout
-                          </MenuItem>
-                        </MenuList>
-                      </ClickAwayListener>
-                    </Paper>
-                  </Grow>
-                )}
-              </Popper>
+              <Grid item xs={1} >
+                <IconButton
+                  buttonRef={node => {
+                    this.anchorEll = node;
+                  }}
+                  aria-owns={openAccount ? "menu-list-grow2" : undefined}
+                  aria-haspopup="true"
+                  onClick={this.handleToggleAccount}
+                  className={classes.lbutton}
+                >
+                  <AccountCircle style={{ fontSize: 34 }} />
+                </IconButton>
+                <Popper
+                  open={openAccount}
+                  anchorEl={this.anchorEll}
+                  transition
+                  disablePortal
+                >
+                  {({ TransitionProps, placement }) => (
+                    <Grow
+                      {...TransitionProps}
+                      id="menu-list-grow2"
+                      style={{
+                        transformOrigin:
+                          placement === "bottom"
+                            ? "center top"
+                            : "center bottom"
+                      }}
+                    >
+                      <Paper>
+                        <ClickAwayListener
+                          onClickAway={this.handleCloseAccount}
+                        >
+                          <MenuList>
+                            <MenuItem
+                              onClick={this.handleCloseAccount}
+                              component={Link}
+                              to={{ pathname: "/" }}
+                              className={classes.dropDownText}
+                            >
+                              Logout
+                            </MenuItem>
+                          </MenuList>
+                        </ClickAwayListener>
+                      </Paper>
+                    </Grow>
+                  )}
+                </Popper>
               </Grid>
             </Grid>
           </Toolbar>
