@@ -72,7 +72,7 @@ class TopNav extends Component {
                   Waiting Room
                 </Typography>
               </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={7}>
                 <ButtonBase
                   component={Link}
                   to={{ pathname: "/home" }}
@@ -80,114 +80,52 @@ class TopNav extends Component {
                 >
                   Home
                 </ButtonBase>
-              </Grid>
-              <Grid item xs={1}>
+              {/* </Grid> */}
+              {/* <Grid item xs={1}> */}
                 <ButtonBase
-                  buttonRef={node => {
-                    this.anchorEl = node;
-                  }}
-                  aria-owns={open ? "menu-list-grow" : undefined}
-                  aria-haspopup="true"
-                  className={classes.mbutton}
-                  onClick={this.handleToggle}
+                  component={Link}
+                  to={{ pathname: "/myskills" }}
+                  className={classes.button}
                 >
-                  My Area
-                </ButtonBase>
-                <Popper
-                  open={open}
-                  anchorEl={this.anchorEl}
-                  transition
-                  disablePortal
-                >
-                  {({ TransitionProps, placement }) => (
-                    <Grow
-                      {...TransitionProps}
-                      id="menu-list-grow"
-                      style={{
-                        transformOrigin:
-                          placement === "bottom"
-                            ? "center top"
-                            : "center bottom"
-                      }}
-                    >
-                      <Paper>
-                        <ClickAwayListener onClickAway={this.handleClose}>
-                          <MenuList>
-                            <MenuItem
-                              onClick={this.handleClose}
-                              component={Link}
-                              to={{ pathname: "/mydetails" }}
-                              className={classes.dropDownText}
-                            >
-                              My Details
-                            </MenuItem>
-                            <MenuItem
-                              onClick={this.handleClose}
-                              component={Link}
-                              to={{ pathname: "/myskills" }}
-                              className={classes.dropDownText}
-                            >
-                              My Skills
-                            </MenuItem>
-                            <MenuItem
-                              onClick={this.handleClose}
-                              component={Link}
-                              to={{ pathname: "/schedulereminder" }}
-                              className={classes.dropDownText}
-                            >
-                              Schedule Reminder
-                            </MenuItem>
-                            <MenuItem
-                              onClick={this.handleClose}
-                              component={Link}
-                              to={{ pathname: "/customertech" }}
-                              className={classes.dropDownText}
-                            >
-                              View Skills (Manager)
-                            </MenuItem>
-                          </MenuList>
-                        </ClickAwayListener>
-                      </Paper>
-                    </Grow>
-                  )}
-                </Popper>
-              </Grid>
-              <Grid item xs={2}>
+                  My Skills
+                </ButtonBase>               
+              {/* </Grid> */}
+              {/* <Grid item xs={1}> */}
                 <ButtonBase
                   component={Link}
                   to={{ pathname: "/customertech" }}
-                  className={classes.cbutton}
+                  className={classes.button}
                 >
-                  Customer Technologies
+                  Technologies
                 </ButtonBase>
-              </Grid>
-              <Grid item xs={2}>
+              {/* </Grid> */}
+              {/* <Grid item xs={1}> */}
                 <ButtonBase
                   component={Link}
                   to={{ pathname: "/courserecs" }}
-                  className={classes.cbutton}
+                  className={classes.button}
                 >
-                  Course Recommendations
+                  Courses
                 </ButtonBase>
-              </Grid>
-              <Grid item xs={1}>
+              {/* </Grid> */}
+              {/* <Grid item xs={1}> */}
                 <ButtonBase
                   component={Link}
                   to={{ pathname: "/quiz" }}
-                  className={classes.qbutton}
+                  className={classes.button}
                 >
                   Quiz
                 </ButtonBase>
               </Grid>
-              <div className={classes.infoSection}>
+              <Grid item xs={1} className={classes.infoSection}>
                 >
                 <Typography color="secondary" className={classes.user}>
                   {user}
                   {/* {this.props.userName} */}
                   {/* UsernameTest1 */}
                 </Typography>
-              </div>
-              <Grid item xs={1} >
+              </Grid>
+              <Grid item xs={1}>
                 <IconButton
                   buttonRef={node => {
                     this.anchorEll = node;
@@ -221,6 +159,14 @@ class TopNav extends Component {
                           onClickAway={this.handleCloseAccount}
                         >
                           <MenuList>
+                            <MenuItem
+                              onClick={this.handleCloseAccount}
+                              component={Link}
+                              to={{ pathname: "/mydetails" }}
+                              className={classes.dropDownText}
+                            >
+                              My Details
+                            </MenuItem>
                             <MenuItem
                               onClick={this.handleCloseAccount}
                               component={Link}
