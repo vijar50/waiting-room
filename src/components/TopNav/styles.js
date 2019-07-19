@@ -21,47 +21,23 @@ export default theme => ({
     textDecoration: "none"
   },
   button: {
-    width: 120,
+    width: 200,
     height: 50,
     fontSize: 18,
     fontWeight: 500,
     textTransform: "uppercase",
-    marginLeft: 25,
-    marginTop: -6,
-    color: "#5385d1"
-  },
-  mbutton: {
-    width: 120,
-    height: 50,
-    fontSize: 18,
-    fontWeight: 500,
-    textTransform: "uppercase",
-    marginTop: -4,
-    color: "#5385d1"
-  },
-  cbutton: {
-    width: 260,
-    height: 50,
-    fontSize: 18,
-    fontWeight: 500,
-    textTransform: "uppercase",
-    marginTop: -7,
-    color: "#5385d1"
-  },
-  qbutton: {
-    width: 120,
-    height: 50,
-    fontSize: 18,
-    fontWeight: 500,
-    textTransform: "uppercase",
-    marginLeft: -25,
     marginTop: -6,
     color: "#5385d1"
   },
   lbutton: {
     marginTop: -5,
-    marginLeft: -30,
+    marginLeft: 100,
     color: "#5385d1"
+  },
+  infoSection: {
+    display: "flex",
+    width: 250,
+    marginLeft: 150
   },
   iconContainer: {
     marginRight: 10,
@@ -94,19 +70,11 @@ export default theme => ({
   dropDownText: {
     color: "#5385d1"
   },
-  infoSection: {
-    display: "flex",
-    width: 200,
-    marginLeft: 100
-  },
   user: {
     marginRight: 10,
     textTransform: "uppercase",
     fontSize: 18,
     marginTop: -2,
     fontWeight: 500
-  },
-  ico: {
-    marginLeft: -20
   }
 });
