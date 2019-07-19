@@ -1,0 +1,24 @@
+{
+    "users":[
+        {
+            "id": "1",
+            "fName": "Billy",
+            "lName": "Bob",
+            "emailAddress": "billy.bob@gmail.com",
+            "phone": "07778894562",
+            "userName": "b",
+            "password": "a",
+            "confPassword": "a"
+        },
+        {
+            "id": "2",
+            "fName": "Jim",
+            "lName": "John",
+            "emailAddress": "jim.john@gmail.com",
+            "phone": "07178293562",
+            "userName": "jimjohn50",
+            "password": "jim123",
+            "confPassword": "jim123"
+        }
+    ]
+}
