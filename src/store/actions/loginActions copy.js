@@ -1,6 +1,9 @@
 //These actions will be called by the actionCreator
 
-var shajs = require("sha.js");
+// var shajs = require("sha.js");
+
+//array in local storage for registered users
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
 export const enterUserName = val => {
   return { type: "USERNAME", value: val.target.value };
@@ -11,25 +14,16 @@ export const enterPassword = val => {
 };
 
 export const login = (username, password) => {
-  return dispatch => {
-    return fetch(`http://localhost:3000/users?userName=${username}`)
-      .then(
-        response => response.json(),
-        error => console.log("Error occurred", error)
-      )
-      .then(myJson => {
-        console.log(JSON.stringify(myJson));
-      })
-      //SHOULD THEN WRITE TO LOCAL DATA FOR USE IN THIS SESSION.
-      // .then(json => dispatch(authenticate(username, json)))
-  };
+  fetch(`http://localhost:3000/users?userName=${username}`)
+    .then(response => response.json())
+    .then(myJson => {
+      console.log(JSON.stringify(myJson));
+    })
+    .catch(error => console.log(error));
 };
 
-// export const authenticate = (username,json) => {
-//   return {
-//     type: "AUTHENTICATE",
-//     value: username
-//   }
+// export const doLogin = loginData => {
+//   console.log(loginData);
 // }
 
 // export const login = (username, password) => {
@@ -49,10 +43,6 @@ export const login = (username, password) => {
 //     //.then(result => result.json())
 //     //.then(loginData => dispatch(doLogin(loginData)));
 //   }
-// }
-
-// export const doLogin = loginData => {
-//   console.log(loginData);
 // }
 
 // export const makeApiCall = () => {
