@@ -29,11 +29,6 @@ class MySkills extends Component {
 
   componentDidMount() {
     // this.getDetails();
-    let user = localStorage.getItem("loggedInUser");
-    let detail = JSON.parse(user);
-    this.setState({
-      data: detail[0].skills
-    })
   }
 
   // getDetails = () => {
