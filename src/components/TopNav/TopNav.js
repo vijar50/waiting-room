@@ -117,8 +117,7 @@ class TopNav extends Component {
                   Quiz
                 </ButtonBase>
               </Grid>
-              <Grid item xs={1} className={classes.infoSection}>
-                >
+              <Grid item xs={1} className={classes.infoSection}>               
                 <Typography color="secondary" className={classes.user}>
                   {user}
                   {/* {this.props.userName} */}
