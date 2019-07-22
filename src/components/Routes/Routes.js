@@ -8,7 +8,6 @@ import CourseRecs from "../CourseRecs/CourseRecs";
 import Quiz from "../Quiz/Quiz";
 import MyDetailsContainer from "../MyDetails/MyDetailsContainer"
 import MySkills from "../MySkills/MySkills";
-import ScheduleReminder from "../ScheduleReminder/ScheduleReminder";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import RegistrationSuccess from "../Registration/RegistrationSuccess";
 
@@ -24,7 +23,6 @@ export default props => (
       <Route exact path="/quiz" component={Quiz} />
       <Route exact path="/mydetails" component={MyDetailsContainer} />
       <Route exact path="/myskills" component={MySkills} />
-      <Route exact path="/schedulereminder" component={ScheduleReminder} />
       <Route exact path="/registrationsuccess" component={RegistrationSuccess} />
       <Route component={PageNotFound} />
     </Switch>

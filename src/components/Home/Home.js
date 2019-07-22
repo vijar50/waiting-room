@@ -18,20 +18,20 @@ class Home extends Component {
     console.log(currentPath);
     return (
       <div>
+        <div className={classes.root}>
         <CssBaseline />
         <TopNavContainer currentPath={currentPath}/>
-        <div className={classes.root}>
           {/* Cards Container */}
           <Grid container justify="center">
             <Grid
-              spacing={24}
+              // spacing={24}
               alignItems="center"
               justify="center"
               container
               className={classes.grid}
             >
               {/* Card 1*/}
-              <Grid item xs={12} md={6}>
+              <Grid item xs={"auto"} md={6}>
                 <Paper className={classes.paper}>
                   <div className={classes.cardContentBox}>
                     <Typography
