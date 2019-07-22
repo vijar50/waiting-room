@@ -1,36 +1,41 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "fName": "Billy",
-            "lName": "Bob",
-            "emailAddress": "billy.bob@gmail.com",
-            "phone": "07778894562",
-            "userName": "b",
-            "password": "a",
-            "confPassword": "a",
-            "skills": [
-                {
-                    "name": "Java",
-                    "type":"Back end Language",
-                    "experience": 1
-                },
-                {
-                    "name": "HTML",
-                    "type":"Front end Language",
-                    "experience": 8
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "fName": "Jim",
-            "lName": "John",
-            "emailAddress": "jim.john@gmail.com",
-            "phone": "07178293562",
-            "userName": "jimjohn50",
-            "password": "jim123",
-            "confPassword": "jim123"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "fName": "Billy",
+      "lName": "Bob",
+      "emailAddress": "billy.bob@gmail.com",
+      "phone": "07778894562",
+      "userName": "b",
+      "password": "a",
+      "confPassword": "a",
+      "skills": [
+        [
+          {
+            "name": "Java",
+            "type": "Back end Languages",
+            "experience": "11"
+          },
+          {
+            "name": "HTML",
+            "type": "Front end Language",
+            "experience": 8,
+            "tableData": {
+              "id": 1
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "fName": "Jim",
+      "lName": "John",
+      "emailAddress": "jim.john@gmail.com",
+      "phone": "07178293562",
+      "userName": "jimjohn50",
+      "password": "jim123",
+      "confPassword": "jim123"
+    }
+  ]
 }

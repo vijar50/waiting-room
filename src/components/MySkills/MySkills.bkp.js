@@ -9,8 +9,7 @@ import TopNav from "../TopNav/TopNav";
 import myStyles from "./styles";
 
 const styles = myStyles;
-var user = localStorage.getItem("loggedInUser");
-var detail = JSON.parse(user);
+
 class MySkills extends Component {
   constructor() {
     super();
@@ -30,6 +29,11 @@ class MySkills extends Component {
 
   componentDidMount() {
     // this.getDetails();
+    let user = localStorage.getItem("loggedInUser");
+    let detail = JSON.parse(user);
+    this.setState({
+      data: detail[0].skills
+    })
   }
 
   // getDetails = () => {
@@ -74,6 +78,8 @@ class MySkills extends Component {
       columns={columns}
       data={query =>
         new Promise((resolve, reject) => {
+          let user = localStorage.getItem("loggedInUser");
+          let detail = JSON.parse(user);
             // prepare your data and then call resolve like this:
             resolve({
                 data: detail[0].skills, // your data array
@@ -106,6 +112,8 @@ class MySkills extends Component {
               data[data.indexOf(oldData)] = newData;
               console.log(data)
               this.setState({ ...this.state, data });
+              let user = localStorage.getItem("loggedInUser");
+              let detail = JSON.parse(user);
               //Send update to back end
               fetch(`http://localhost:3000/users/${detail[0].id}`, {
                 headers: {
