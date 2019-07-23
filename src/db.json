@@ -10,21 +10,36 @@
       "password": "a",
       "confPassword": "a",
       "skills": [
-        [
-          {
-            "name": "Java",
-            "type": "Back end Languages",
-            "experience": "12"
-          },
-          {
-            "name": "HTML",
-            "type": "Front end Language",
-            "experience": 8,
-            "tableData": {
-              "id": 1
-            }
-          }
-        ]
+        {
+          "id": 1,
+          "name": "Java",
+          "type": "Back end Language",
+          "experience": "5"
+        },
+        {
+          "id": 2,
+          "name": "HTML",
+          "type": "Front end Language",
+          "experience": 8
+        },
+        {
+          "id": 3,
+          "name": "CSS",
+          "type": "Front end Language",
+          "experience": 8
+        },
+        {
+          "id": 4,
+          "name": "Python",
+          "type": "Back end Language",
+          "experience": "2"
+        },
+        {
+          "id": 5,
+          "name": "C++",
+          "type": "Back end language",
+          "experience": "2"
+        }
       ]
     },
     {
@@ -35,7 +50,19 @@
       "phone": "07178293562",
       "userName": "jimjohn50",
       "password": "jim123",
-      "confPassword": "jim123"
+      "confPassword": "jim123",
+      "skills": [
+        {
+          "name": "Java",
+          "type": "Back end Languages",
+          "experience": 12
+        },
+        {
+          "name": "HTML",
+          "type": "Front end Language",
+          "experience": 8
+        }
+      ]
     }
   ]
 }

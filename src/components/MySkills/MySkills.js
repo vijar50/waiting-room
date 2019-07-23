@@ -16,6 +16,7 @@ class MySkills extends Component {
     super();
     this.state = {
       columns: [
+        { title: "ID", field: "id" },
         { title: "Name", field: "name" },
         { title: "Type", field: "type" },
         { title: "Experience (years)", field: "experience", type: "numeric" }
@@ -23,6 +24,39 @@ class MySkills extends Component {
       data: []
     };
   }
+
+  getBackend = () => {
+    //Get record for logged in user
+    fetch(
+      `http://localhost:3000/users?userName=${localStorage.getItem("username")}`
+    )
+      .then(
+        response => response.json(),
+        error => console.log("Error occurred", error)
+      )
+      //Store the skills locally
+      .then(myJson => {
+        localStorage.setItem("detail", JSON.stringify(myJson[0].skills));
+        // localStorage.setItem("detail", myJson[0].skills))
+      });
+  };
+
+  updateBackEnd = data => {
+    //get ID for logged in
+    let user = localStorage.getItem("loggedInUser");
+    let detail = JSON.parse(user);
+    //patch back end
+    fetch(`http://localhost:3000/users/${detail[0].id}`, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      method: "PATCH",
+      body: JSON.stringify({
+        skills: data
+      })
+    });
+  };
 
   render() {
     const { classes } = this.props;
@@ -46,43 +80,24 @@ class MySkills extends Component {
         </Grid>
         <Grid container className={classes.grid}>
           <MaterialTable
-            title="Skills"
+            title=""
             columns={columns}
             data={query =>
               new Promise((resolve, reject) => {
-                //Get record for logged in user
-                fetch(
-                  `http://localhost:3000/users?userName=${localStorage.getItem(
-                    "username"
-                  )}`
-                )
-                  .then(
-                    response => response.json(),
-                    error => console.log("Error occurred", error)
-                  )
-                  //Store the skills locally
-                  .then(myJson => {
-                    localStorage.setItem(
-                      "detail",
-                      JSON.stringify(myJson[0].skills[0])
-                    );
-                    // console.log(localStorage.getItem("detail"))
-                    // localStorage.setItem("detail", myJson[0].skills))
-                  });
-                //Convert string to parseable format
+                this.getBackend()
+                //Convert string from getBackend() to parseable format
                 let str = localStorage.getItem("detail");
-                // let myStr = str.slice(1, -1);
-                console.log(str);
+                console.log("Load Data: " + str);
                 // prepare your data and then call resolve like this:
                 resolve({
                   data: JSON.parse(str), // your data array
                   page: 1, // current page number
                   totalCount: 10 // total page number
                 });
+                //Update state
                 this.setState({
                   data: JSON.parse(str)
-                })
-                // console.log(`User ID: ${detail[0].skills}`);
+                });
               })
             }
             editable={{
@@ -90,43 +105,47 @@ class MySkills extends Component {
               onRowAdd: newData =>
                 new Promise(resolve => {
                   setTimeout(() => {
+                    //Add item to state
                     resolve();
-                    const data = [...this.state.data];
+                    let data = [...this.state.data];
+                    console.log(data);
                     data.push(newData);
+                    console.log(data);
                     this.setState({ ...this.state, data });
+                    //Send update to back end
+                    this.updateBackEnd(data);
                   }, 600);
                 }),
               onRowUpdate: (newData, oldData) =>
                 new Promise(resolve => {
                   setTimeout(() => {
                     resolve();
-                    const data = [...this.state.data];
-                    data[data.indexOf(oldData)] = newData;
-                    console.log(data);
+                    console.log(`Old Data ${JSON.stringify(oldData)}`);
+                    console.log(`New Data ${JSON.stringify(newData)}`);
+                    let data = [...this.state.data];
+                    //find array index of changed item and update
+                    for (var i = 0; i < data.length; i++) {
+                      if (data[i].id === newData.id) {
+                        data[i] = newData;
+                        break;
+                      }
+                    }
+                    console.log("Final: " + JSON.stringify(data));
                     this.setState({ ...this.state, data });
-                    // //get ID for logged in
-                    // let user = localStorage.getItem("loggedInUser");
-                    // let detail = JSON.parse(user);
-                    // //Send update to back end
-                    // fetch(`http://localhost:3000/users/${detail[0].id}`, {
-                    //   headers: {
-                    //     Accept: "application/json",
-                    //     "Content-Type": "application/json"
-                    //   },
-                    //   method: "PATCH",
-                    //   body: JSON.stringify({
-                    //     skills: [data]
-                    //   })
-                    // });
+                    //Send update to back end
+                    this.updateBackEnd(data);
                   }, 600);
                 }),
               onRowDelete: oldData =>
                 new Promise(resolve => {
                   setTimeout(() => {
                     resolve();
-                    const data = [...this.state.data];
+                    let data = [...this.state.data];
                     data.splice(data.indexOf(oldData), 1);
+                    console.log("tbdData: " + data);
                     this.setState({ ...this.state, data });
+                    //Send update to back end
+                    this.updateBackEnd(data);
                   }, 600);
                 })
             }}
