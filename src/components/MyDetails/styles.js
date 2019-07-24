@@ -1,6 +1,6 @@
 export default theme => ({
   paper: {
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing.unit * 4
   },
   root: {
     flexGrow: 1,
@@ -13,12 +13,11 @@ export default theme => ({
     alignItems: "center"
   },
   header: {
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing.unit * 4
   },
   textField: {
-    marginRight: 15,
-    // marginTop: 8,
-    width: 220,
+    width: 275,
+    marginLeft: theme.spacing.unit * 4
   },
   textLabel: {
     marginRight: -30
@@ -29,5 +28,8 @@ export default theme => ({
   },
   subheading: {
     marginTop: 20
+  },
+  edit: {
+    fontSize: 24
   }
 });

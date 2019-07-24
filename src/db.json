@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "fName": "Billy",
-      "lName": "Bobb",
+      "fName": "Bill",
+      "lName": "Bob",
       "emailAddress": "billy.bob@gmail.com",
       "phone": "07778894562",
       "userName": "b",
@@ -14,7 +14,7 @@
           "id": 1,
           "name": "Java",
           "type": "Back end Language",
-          "experience": "5"
+          "experience": "1"
         },
         {
           "id": 2,
@@ -33,12 +33,6 @@
           "name": "Python",
           "type": "Back end Language",
           "experience": "2"
-        },
-        {
-          "id": 5,
-          "name": "C++",
-          "type": "Back end language",
-          "experience": "2"
         }
       ]
     },
@@ -47,7 +41,7 @@
       "fName": "Jim",
       "lName": "John",
       "emailAddress": "jim.john@gmail.com",
-      "phone": "07178293562",
+      "phone": "07178293568",
       "userName": "jimjohn50",
       "password": "jim123",
       "confPassword": "jim123",
