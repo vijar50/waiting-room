@@ -229,6 +229,7 @@ class Login extends Component {
                   </Grid>
                   <Grid item xs={6} className={classes.mainLogin}>
                     <Button
+                      id="loginToSite"
                       variant="contained"
                       color="secondary"
                       className={classes.button}

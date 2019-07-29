@@ -62,6 +62,7 @@ class TopNav extends Component {
             <Grid container alignItems="baseline">
               <Grid item xs={2}>
                 <Typography
+                  id="siteLogo"
                   variant="h5"
                   color="secondary"
                   component={Link}
@@ -110,6 +111,7 @@ class TopNav extends Component {
               {/* </Grid> */}
               {/* <Grid item xs={1}> */}
                 <ButtonBase
+                    id="quiz"
                   component={Link}
                   to={{ pathname: "/quiz" }}
                   className={classes.button}
@@ -118,7 +120,7 @@ class TopNav extends Component {
                 </ButtonBase>
               </Grid>
               <Grid item xs={1} className={classes.infoSection}>               
-                <Typography color="secondary" className={classes.user}>
+                <Typography id="loggedInAs" color="secondary" className={classes.user}>
                   {user}
                   {/* {this.props.userName} */}
                   {/* UsernameTest1 */}
