@@ -1,4 +1,7 @@
+import { AssertionError } from "assert";
+
 const { Builder, Key, By, until } = require("selenium-webdriver");
+const assert = require("assert");
 
 //ELEMENTS
 
@@ -23,16 +26,42 @@ export const enterUsername = async (username, webdriver) => {
     .sendKeys(username, Key.RETURN);
 };
 
+export const enterAndClearUsername = async (username, webdriver) => {
+  await webdriver
+    .findElement(By.xpath(USERNAME))
+    .sendKeys(username, Key.BACK_SPACE);
+};
+
 export const enterPassword = async (password, webdriver) => {
   await webdriver
     .findElement(By.xpath(PASSWORD))
     .sendKeys(password, Key.RETURN);
 };
 
+export const enterAndClearPassword = async (password, webdriver) => {
+  await webdriver
+    .findElement(By.xpath(PASSWORD))
+    .sendKeys(password, Key.BACK_SPACE);
+};
+
 export const findByIdAndClick = async (locator, webdriver) => {
   await webdriver.findElement(By.id(locator)).click();
 };
 
+export const findByIdAndCheckAttribute = async (
+  locator,
+  attribute,
+  webdriver
+) => {
+  let attr = await webdriver.findElement(By.id(locator)).getAttribute(attribute);
+  return JSON.stringify(attr)
+};
+
+export const findByIDAndGetText = async (locator, webdriver) => {
+  let attr = await webdriver.findElement(By.id(locator)).getText();
+  return attr
+};
+
 export const waitUntilElementLocatedById = async (locator, webdriver) => {
-    await webdriver.wait(until.elementLocated(By.id(locator)));
-  };
+  await webdriver.wait(until.elementLocated(By.id(locator)));
+};
