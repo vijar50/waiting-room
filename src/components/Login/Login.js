@@ -131,6 +131,7 @@ class Login extends Component {
                 <Grid container className={classes.buttonContainer}>
                   <Grid item xs={6}>
                     <Button
+                      id="initLogin"
                       variant="contained"
                       color="secondary"
                       className={classes.button}
@@ -220,6 +221,7 @@ class Login extends Component {
                 <Grid container>
                   <Grid item xs={6} className={classes.mainLogin}>
                     <Button
+                      id="cancel"
                       color="secondary"
                       className={classes.button}
                       onClick={this.prevStep}
