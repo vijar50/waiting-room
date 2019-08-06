@@ -9,8 +9,8 @@ import TopNav from "../TopNav/TopNav";
 import myStyles from "./styles";
 
 const styles = myStyles;
-var user = localStorage.getItem("loggedInUser");
-var detail = JSON.parse(user);
+// var user = localStorage.getItem("loggedInUser");
+// var detail = JSON.parse(user);
 class MySkills extends Component {
   constructor() {
     super();
