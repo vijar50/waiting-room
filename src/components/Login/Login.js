@@ -81,8 +81,7 @@ class Login extends Component {
   };
 
   handleSubmit = () => {
-    const { userN, passW } = this.state;
-    // this.props.onLogin(userN, passW);
+    const { userN, passW } = this.state;    
     localStorage.setItem("username", this.state.userN);
   
     return fetch(`http://localhost:3000/users?userName=${userN}`)
@@ -97,8 +96,6 @@ class Login extends Component {
       //SHOULD THEN WRITE TO LOCAL DATA FOR USE IN THIS SESSION.
       // .then(json => dispatch(authenticate(username, json)))
   };
-
-
 
   render() {
     const { classes } = this.props;
@@ -169,8 +166,7 @@ class Login extends Component {
               className={classes.grid}
               justify="center"
             >
-              <Paper className={classes.paper}>
-                {/* <form onSubmit={this.handleSubmit}> */}
+              <Paper className={classes.paper}>                
                 <Grid container spacing={16} className={classes.fieldContainer}>
                   <Grid container xs={6} className={classes.textLabel}>
                     <Grid item xs={3}>
@@ -185,8 +181,7 @@ class Login extends Component {
                   <Grid item xs={6}>
                     <TextField
                       id="username"
-                      value={this.state.userN}
-                      //Get onEnterUserName from LoginContainer.js
+                      value={this.state.userN}                      
                       onChange={this.onChangeUser}
                       className={classes.textField}
                       helperText={this.state.userHelperText}
@@ -209,8 +204,7 @@ class Login extends Component {
                     <TextField
                       id="password"
                       type="password"
-                      value={this.state.passW}
-                      //Get onEnterPassword from LoginContainer.js
+                      value={this.state.passW}                      
                       onChange={this.onChangePassword}
                       className={classes.textField}
                       helperText={this.state.passwordHelperText}
