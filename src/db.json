@@ -34,6 +34,16 @@
           "type": "Back end Language",
           "experience": "2"
         }
+      ],
+      "myCourses": [
+        {
+          "courseName": "Web Development Fundamentals - Javascript",
+          "bookingDate": "2019-08-11T11:17:00.000Z"
+        },
+        {
+          "courseName": "Developing Applications using ReactJS",
+          "bookingDate": "2019-09-11T12:26:00.000Z"
+        }
       ]
     },
     {

@@ -10,20 +10,20 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import { Link, Redirect, withRouter } from "react-router-dom";
-import FormDialog from "./FormDialog";
+import FormButton from "./FormButton";
 import myStyles from "./styles";
 
 const styles = myStyles;
 
 class Cards extends Component {
   goToLink = () => {
-    window.location = this.props.externalLink;
+    window.open(this.props.externalLink);
   };
   render() {
     const { classes } = this.props;
 
     return (
-      <div>
+      <React.Fragment>
         <CssBaseline />
         <Card className={classes.card}>
           <CardActionArea>
@@ -36,7 +36,6 @@ class Cards extends Component {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {/* Introduction to ReactJS */}
                 {this.props.cardName}
               </Typography>
               <Typography variant="body2" component="p">
@@ -45,21 +44,16 @@ class Cards extends Component {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <FormDialog />
-            {/* <Button size="small" color="secondary" >
-              Book Course
-            </Button> */}
-            <Button
-              size="small"
-              color="secondary"
-              component={Link}
-              onClick={this.goToLink}
-            >
+            <FormButton
+              cardName={this.props.cardName}
+              coursePreReq={this.props.coursePreReq}
+            />
+            <Button size="small" color="secondary" onClick={this.goToLink}>
               Learn More
             </Button>
           </CardActions>
         </Card>
-      </div>
+      </React.Fragment>
     );
   }
 }
