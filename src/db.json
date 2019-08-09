@@ -11,27 +11,39 @@
       "confPassword": "a",
       "skills": [
         {
-          "id": 1,
+          "id": "1",
           "name": "Java",
           "type": "Back end Language",
           "experience": "1"
         },
         {
-          "id": 2,
+          "id": "2",
           "name": "HTML",
           "type": "Front end Language",
-          "experience": 8
+          "experience": "8"
         },
         {
-          "id": 3,
+          "id": "3",
           "name": "CSS",
           "type": "Front end Language",
-          "experience": 8
+          "experience": "8"
         },
         {
-          "id": 4,
+          "id": "4",
           "name": "Python",
           "type": "Back end Language",
+          "experience": "2"
+        },
+        {
+          "id": "5",
+          "name": "React",
+          "type": "Front end Framework",
+          "experience": "1"
+        },
+        {
+          "id": "6",
+          "name": "Angular",
+          "type": "Front end Framework",
           "experience": "2"
         }
       ],
@@ -45,8 +57,8 @@
           "formattedBookingDate": "28/9/2019"
         },
         {
-          "courseName": "Developing Applications using ReactJS",
-          "formattedBookingDate": "13/8/2019"
+          "courseName": "Developing on AWS",
+          "formattedBookingDate": "4/9/2019"
         }
       ]
     },
