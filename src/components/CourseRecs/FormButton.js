@@ -40,7 +40,8 @@ class FormButton extends Component {
     });
     let courseName = this.props.cardName;
     let bookingDate = this.state.date;
-    let booking = { courseName, bookingDate };
+    let formattedBookingDate = bookingDate.getDate() + "/" + bookingDate.getMonth() + "/" + bookingDate.getFullYear()
+    let booking = { courseName, formattedBookingDate };
     let courses = JSON.parse(localStorage.getItem("courses"));
     courses.push(booking);
     console.log(courses);

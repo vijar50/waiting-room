@@ -4,12 +4,18 @@ export default theme => ({
     backgroundColor: theme.palette.grey["A500"]
   },
   grid: {
-    width: 1200,
-    marginTop: 50,
-    [theme.breakpoints.down("sm")]: {
-      width: "calc(100% - 20px)"
-    }
+    padding: theme.spacing.unit * 10,
+    display: "flex",
+    // flexDirection: "column",
+    alignItems: "center"
   },
+  // grid: {
+  //   width: 1200,
+  //   marginTop: 50,
+  //   [theme.breakpoints.down("sm")]: {
+  //     width: "calc(100% - 20px)"
+  //   }
+  // },
   paper: {
     padding: theme.spacing.unit * 3,
     textAlign: "left",
@@ -28,5 +34,10 @@ export default theme => ({
   },
   button: {
     width: 150
-  }
+  },
+  card: {
+    maxWidth: 512,
+    maxHeight: 512
+  },
+
 });
