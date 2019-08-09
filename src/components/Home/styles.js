@@ -6,16 +6,8 @@ export default theme => ({
   grid: {
     padding: theme.spacing.unit * 10,
     display: "flex",
-    // flexDirection: "column",
     alignItems: "center"
   },
-  // grid: {
-  //   width: 1200,
-  //   marginTop: 50,
-  //   [theme.breakpoints.down("sm")]: {
-  //     width: "calc(100% - 20px)"
-  //   }
-  // },
   paper: {
     padding: theme.spacing.unit * 3,
     textAlign: "left",
@@ -37,7 +29,10 @@ export default theme => ({
   },
   card: {
     maxWidth: 512,
-    maxHeight: 512
+    maxHeight: 356,
+    minHeight: 356
   },
-
+  table: {
+    minHeight: 50,
+  }
 });

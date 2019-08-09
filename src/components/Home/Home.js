@@ -8,6 +8,7 @@ import Paper from "@material-ui/core/Paper";
 import TopNavContainer from "../TopNav/TopNavContainer";
 import Button from "@material-ui/core/Button";
 import CourseCard from "./CoursesCard";
+import WelcomeCard from "./WelcomeCard"
 import myStyles from "./styles";
 
 const styles = myStyles;
@@ -44,7 +45,7 @@ class Home extends Component {
           <TopNavContainer currentPath={currentPath} />
           <Grid container className={classes.grid} spacing={6}>
             <Grid item xs={12} md={4}>
-              <CourseCard />
+              <WelcomeCard />
             </Grid>
             <Grid item xs={12} md={4}>
               <CourseCard />

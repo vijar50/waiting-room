@@ -13,15 +13,29 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Avatar from "@material-ui/core/Avatar";
-import Edit from "@material-ui/icons/Edit";
 import Button from "@material-ui/core/Button";
 import { Link, Redirect, withRouter } from "react-router-dom";
 import myStyles from "./styles";
 
 const styles = myStyles;
 
-class Cards extends Component {
+class CourseCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      page: 0,
+      setPage: 0,
+      rowsPerPage: 3,
+      setRowsPerPage: 3
+    };
+  }
+
+  handleChangePage = (event, newPage) => {
+    this.setState({
+      setPage: newPage
+    });
+  };
+
   render() {
     const { classes } = this.props;
     let courses = JSON.parse(localStorage.getItem("courses"));
@@ -50,7 +64,9 @@ class Cards extends Component {
                       <TableCell component="th" scope="row">
                         {booking.courseName}
                       </TableCell>
-                      <TableCell align="right">{booking.formattedBookingDate}</TableCell>
+                      <TableCell align="right">
+                        {booking.formattedBookingDate}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -58,7 +74,12 @@ class Cards extends Component {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="secondary" component={Link} to={{pathname: "/courserecs"}}>
+            <Button
+              size="small"
+              color="secondary"
+              component={Link}
+              to={{ pathname: "/courserecs" }}
+            >
               View Courses
             </Button>
           </CardActions>
@@ -68,4 +89,4 @@ class Cards extends Component {
   }
 }
 
-export default withRouter(withStyles(styles)(Cards));
+export default withRouter(withStyles(styles)(CourseCard));
