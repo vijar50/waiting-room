@@ -35,10 +35,10 @@ class Cards extends Component {
               title="React Logo"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h5">
                 {this.props.cardName}
               </Typography>
-              <Typography variant="body2" component="p">
+              <Typography variant="body2">
                 {this.props.cardBody}
               </Typography>
             </CardContent>

@@ -38,11 +38,15 @@
       "myCourses": [
         {
           "courseName": "Web Development Fundamentals - Javascript",
-          "bookingDate": "2019-08-11T11:17:00.000Z"
+          "formattedBookingDate": "28/8/2019"
+        },
+        {
+          "courseName": "LEADING SAFE",
+          "formattedBookingDate": "28/9/2019"
         },
         {
           "courseName": "Developing Applications using ReactJS",
-          "bookingDate": "2019-09-11T12:26:00.000Z"
+          "formattedBookingDate": "13/8/2019"
         }
       ]
     },
