@@ -34,5 +34,11 @@ export default theme => ({
   },
   table: {
     minHeight: 50,
+  },
+  rating: {
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: "center",
+    padding: theme.spacing.unit * 6
   }
 });
