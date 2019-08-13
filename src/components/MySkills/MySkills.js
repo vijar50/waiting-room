@@ -84,9 +84,8 @@ class MySkills extends Component {
             columns={columns}
             data={query =>
               new Promise(async (resolve, reject) => {
-                await setTimeout(() => this.getBackend(), 2000) 
-                // this.getBackend()
-                //Convert string from getBackend() to parseable format
+                // await setTimeout(() => this.getBackend(), 600) 
+                // this.getBackend()                
                 let str = localStorage.getItem("detail");
                 console.log("Load Data: " + str);
                 // prepare your data and then call resolve like this:
@@ -101,8 +100,7 @@ class MySkills extends Component {
                 });
               })
             }
-            editable={{
-              //Check how to add data on JSON Server video
+            editable={{              
               onRowAdd: newData =>
                 new Promise(resolve => {
                   setTimeout(() => {

@@ -36,8 +36,7 @@ export default theme => ({
   },
   infoSection: {
     display: "flex",
-    width: 250,
-    marginLeft: 150
+     marginLeft: 85
   },
   iconContainer: {
     marginRight: 10,
@@ -76,5 +75,8 @@ export default theme => ({
     fontSize: 18,
     marginTop: -2,
     fontWeight: 500
+  },
+  buttonGrid: {
+    marginLeft: 223
   }
 });
