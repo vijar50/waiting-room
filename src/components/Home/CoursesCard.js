@@ -14,6 +14,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Button from "@material-ui/core/Button";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { Link, Redirect, withRouter } from "react-router-dom";
 import myStyles from "./styles";
 
@@ -26,8 +27,16 @@ class CourseCard extends Component {
       page: 0,
       setPage: 0,
       rowsPerPage: 3,
-      setRowsPerPage: 3
+      setRowsPerPage: 3,
+      courses: null,
+      loading: true
     };
+  }
+
+  componentDidMount = async () => {
+    await setTimeout(() => this.setState({
+      loading: false
+    }), 2000) 
   }
 
   handleChangePage = (event, newPage) => {
@@ -37,29 +46,30 @@ class CourseCard extends Component {
   };
 
   render() {
-    const { classes } = this.props;
-    let courses = JSON.parse(localStorage.getItem("courses"));
+    const { classes, courses } = this.props;
+    const {loading } = this.state
     return (
       <React.Fragment>
         <CssBaseline />
-        <Card className={classes.card}>
+        <Card className={classes.card}>  
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" color="secondary">
-                My Courses
+                My Courses 
               </Typography>
               <Typography variant="body1">
                 You are attending the following courses:
               </Typography>
+
               <Table className={classes.table}>
                 <TableHead>
                   <TableRow>
                     <TableCell>Course Name</TableCell>
                     <TableCell align="right">Course Date</TableCell>
                   </TableRow>
-                </TableHead>
+                </TableHead>            
                 <TableBody>
-                  {courses.map(booking => (
+                  { !loading ? courses.map(booking => (
                     <TableRow>
                       <TableCell component="th" scope="row">
                         {booking.courseName}
@@ -67,8 +77,10 @@ class CourseCard extends Component {
                       <TableCell align="right">
                         {booking.formattedBookingDate}
                       </TableCell>
-                    </TableRow>
-                  ))}
+                    </TableRow>                 
+                  ))
+                  : <CircularProgress className={classes.progress} color="secondary" size={80}/>
+                }
                 </TableBody>
               </Table>
             </CardContent>
@@ -79,8 +91,9 @@ class CourseCard extends Component {
               color="secondary"
               component={Link}
               to={{ pathname: "/courserecs" }}
+              
             >
-              View Courses
+              Edit Bookings
             </Button>
           </CardActions>
         </Card>

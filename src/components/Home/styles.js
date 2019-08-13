@@ -40,5 +40,13 @@ export default theme => ({
     flexDirection: 'column',
     alignItems: "center",
     padding: theme.spacing.unit * 6
-  }
+  },
+  progress: {
+    // padding: theme.spacing.unit * 1,
+    // display: "flex",
+    // alignItems: "center"
+    marginLeft: 190,
+    marginTop: 40,
+    marginBottom: 20
+  },
 });

@@ -83,8 +83,9 @@ class MySkills extends Component {
             title=""
             columns={columns}
             data={query =>
-              new Promise((resolve, reject) => {
-                this.getBackend()
+              new Promise(async (resolve, reject) => {
+                await setTimeout(() => this.getBackend(), 2000) 
+                // this.getBackend()
                 //Convert string from getBackend() to parseable format
                 let str = localStorage.getItem("detail");
                 console.log("Load Data: " + str);

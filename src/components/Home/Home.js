@@ -1,44 +1,47 @@
-import React, { Component } from "react";
+import React, { Component, useState} from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import TopNavContainer from "../TopNav/TopNavContainer";
-import Button from "@material-ui/core/Button";
 import CourseCard from "./CoursesCard";
-import WelcomeCard from "./WelcomeCard"
-import QuizCard from "./QuizCard"
+import WelcomeCard from "./WelcomeCard";
+import QuizCard from "./QuizCard";
 import myStyles from "./styles";
 
 const styles = myStyles;
 
 class Home extends Component {
-
-  componentDidMount() {
-    //Get record for logged in user
-    fetch(
-      `http://localhost:3000/users?userName=${localStorage.getItem("username")}`
-    )
-      .then(
-        response => response.json(),
-        error => console.log("Error occurred", error)
-      )
-      //Store the skills locally
-      .then(myJson => {
-        localStorage.setItem("courses", JSON.stringify(myJson[0].myCourses));
-      });
-
-    let courses = JSON.parse(localStorage.getItem("courses"))
-
-    console.log(courses)
+  constructor() {
+    super();
+    this.state = {
+      courses: []
+    };
   }
+
+  
+  componentDidMount = async () => {   
+    await setTimeout(() => this.initData(), 2000)    
+  }
+
+  componentWillUnmount() {
+    clearTimeout();
+  }
+
+  initData = () => {
+    let user = JSON.parse(localStorage.getItem("loggedInUser"));
+    let courseData = user[0].myCourses;
+    // console.log(courseData)
+    this.setState({
+      courses: courseData
+    });
+  };
 
   render() {
     const { classes } = this.props;
+    const { courses } = this.state;
     const currentPath = this.props.location.pathname;
-    console.log(currentPath);
+    console.log(this.state.courses);
     return (
       <div>
         <div className={classes.root}>
@@ -49,7 +52,7 @@ class Home extends Component {
               <WelcomeCard />
             </Grid>
             <Grid item xs={12} md={4}>
-              <CourseCard />
+              <CourseCard courses={courses}/>
             </Grid>
             <Grid item xs={12} md={4}>
               <QuizCard />
