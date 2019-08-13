@@ -31,6 +31,7 @@ class Home extends Component {
   initData = () => {
     let user = JSON.parse(localStorage.getItem("loggedInUser"));
     let courseData = user[0].myCourses;
+    localStorage.setItem("detail", JSON.stringify(user[0].skills));
     // console.log(courseData)
     this.setState({
       courses: courseData

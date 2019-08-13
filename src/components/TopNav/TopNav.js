@@ -73,7 +73,7 @@ class TopNav extends Component {
                   Waiting Room
                 </Typography>
               </Grid>
-              <Grid item xs={7}>
+              <Grid item xs={6} className={classes.buttonGrid}>
                 <ButtonBase
                   component={Link}
                   to={{ pathname: "/home" }}
@@ -81,15 +81,13 @@ class TopNav extends Component {
                 >
                   Home
                 </ButtonBase>
-              {/* </Grid> */}
-              {/* <Grid item xs={1}> */}
-                <ButtonBase
+                {/* <ButtonBase
                   component={Link}
                   to={{ pathname: "/myskills" }}
                   className={classes.button}
                 >
                   My Skills
-                </ButtonBase>               
+                </ButtonBase>                */}
               {/* </Grid> */}
               {/* <Grid item xs={1}> */}
                 <ButtonBase
@@ -122,8 +120,6 @@ class TopNav extends Component {
               <Grid item xs={1} className={classes.infoSection}>               
                 <Typography id="loggedInAs" color="secondary" className={classes.user}>
                   {user}
-                  {/* {this.props.userName} */}
-                  {/* UsernameTest1 */}
                 </Typography>
               </Grid>
               <Grid item xs={1}>
@@ -166,7 +162,15 @@ class TopNav extends Component {
                               to={{ pathname: "/mydetails" }}
                               className={classes.dropDownText}
                             >
-                              My Details
+                              Profile
+                            </MenuItem>
+                            <MenuItem
+                              onClick={this.handleCloseAccount}
+                              component={Link}
+                              to={{ pathname: "/myskills" }}
+                              className={classes.dropDownText}
+                            >
+                              Skills
                             </MenuItem>
                             <MenuItem
                               onClick={this.handleCloseAccount}
