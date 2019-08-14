@@ -60,9 +60,8 @@ class TopNav extends Component {
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
             <Grid container alignItems="baseline">
-              <Grid item xs={2}>
+              <Grid item xs={2} id="siteLogo">
                 <Typography
-                  id="siteLogo"
                   variant="h5"
                   color="secondary"
                   component={Link}
@@ -75,41 +74,31 @@ class TopNav extends Component {
               </Grid>
               <Grid item xs={6} className={classes.buttonGrid}>
                 <ButtonBase
+                  id="homeButton"
                   component={Link}
                   to={{ pathname: "/home" }}
                   className={classes.button}
                 >
                   Home
                 </ButtonBase>
-                {/* <ButtonBase
-                  component={Link}
-                  to={{ pathname: "/myskills" }}
-                  className={classes.button}
-                >
-                  My Skills
-                </ButtonBase>                */}
-              {/* </Grid> */}
-              {/* <Grid item xs={1}> */}
                 <ButtonBase
+                  id="technologiesButton"
                   component={Link}
                   to={{ pathname: "/customertech" }}
                   className={classes.button}
                 >
                   Technologies
                 </ButtonBase>
-              {/* </Grid> */}
-              {/* <Grid item xs={1}> */}
                 <ButtonBase
+                  id="coursesButton"
                   component={Link}
                   to={{ pathname: "/courserecs" }}
                   className={classes.button}
                 >
                   Courses
                 </ButtonBase>
-              {/* </Grid> */}
-              {/* <Grid item xs={1}> */}
                 <ButtonBase
-                    id="quiz"
+                  id="quizButton"
                   component={Link}
                   to={{ pathname: "/quiz" }}
                   className={classes.button}
@@ -117,13 +106,18 @@ class TopNav extends Component {
                   Quiz
                 </ButtonBase>
               </Grid>
-              <Grid item xs={1} className={classes.infoSection}>               
-                <Typography id="loggedInAs" color="secondary" className={classes.user}>
+              <Grid item xs={1} className={classes.infoSection}>
+                <Typography
+                  id="loggedInAs"
+                  color="secondary"
+                  className={classes.user}
+                >
                   {user}
                 </Typography>
               </Grid>
               <Grid item xs={1}>
                 <IconButton
+                  id="accountButton"
                   buttonRef={node => {
                     this.anchorEll = node;
                   }}
@@ -157,6 +151,7 @@ class TopNav extends Component {
                         >
                           <MenuList>
                             <MenuItem
+                              id="profileLink"
                               onClick={this.handleCloseAccount}
                               component={Link}
                               to={{ pathname: "/mydetails" }}
@@ -165,6 +160,7 @@ class TopNav extends Component {
                               Profile
                             </MenuItem>
                             <MenuItem
+                              id="skillsLink"
                               onClick={this.handleCloseAccount}
                               component={Link}
                               to={{ pathname: "/myskills" }}
@@ -173,6 +169,7 @@ class TopNav extends Component {
                               Skills
                             </MenuItem>
                             <MenuItem
+                              id="logoutLink"
                               onClick={this.handleCloseAccount}
                               component={Link}
                               to={{ pathname: "/" }}
