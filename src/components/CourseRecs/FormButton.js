@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -12,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
 import Snackbar from "@material-ui/core/Snackbar";
 import Portal from "@material-ui/core/Portal";
-import { Link, Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import DateFnsUtils from "@date-io/date-fns";
 import myStyles from "./styles";
 
