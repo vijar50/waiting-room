@@ -169,6 +169,15 @@ class TopNav extends Component {
                               Skills
                             </MenuItem>
                             <MenuItem
+                              id="bookingsLink"
+                              onClick={this.handleCloseAccount}
+                              component={Link}
+                              to={{ pathname: "/mybookings" }}
+                              className={classes.dropDownText}
+                            >
+                              Bookings
+                            </MenuItem>
+                            <MenuItem
                               id="logoutLink"
                               onClick={this.handleCloseAccount}
                               component={Link}

@@ -9,17 +9,14 @@ import TopNav from "../TopNav/TopNav";
 import myStyles from "./styles";
 
 const styles = myStyles;
-// var user = localStorage.getItem("loggedInUser");
-// var detail = JSON.parse(user);
-class MySkills extends Component {
+
+class MyBookings extends Component {
   constructor() {
     super();
     this.state = {
       columns: [
-        { title: "ID", field: "id" },
-        { title: "Name", field: "name" },
-        { title: "Type", field: "type" },
-        { title: "Experience (years)", field: "experience", type: "numeric" }
+        { title: "Course Name", field: "courseName" },
+        { title: "Date", field: "formattedBookingDate" }
       ],
       data: []
     };
@@ -36,7 +33,7 @@ class MySkills extends Component {
       )
       //Store the skills locally
       .then(myJson => {
-        localStorage.setItem("detail", JSON.stringify(myJson[0].skills));
+        localStorage.setItem("latest", JSON.stringify(myJson[0].myCourses));
         // localStorage.setItem("detail", myJson[0].skills))
       });
   };
@@ -53,7 +50,7 @@ class MySkills extends Component {
       },
       method: "PATCH",
       body: JSON.stringify({
-        skills: data
+        myCourses: data
       })
     });
   };
@@ -75,77 +72,45 @@ class MySkills extends Component {
             gutterBottom
             className={classes.header}
           >
-            My Skills
+            My Bookings
           </Typography>
         </Grid>
         <Grid container className={classes.grid}>
           <MaterialTable
             title=""
-            columns={columns}
             options={{
               search: false
             }}
+            columns={columns}
             data={query =>
               new Promise(async (resolve, reject) => {
                 // await setTimeout(() => this.getBackend(), 600) 
-                // this.getBackend()                
-                let str = localStorage.getItem("detail");
-                console.log("Load Data: " + str);
+                this.getBackend()                
+                // let str = localStorage.getItem("detail");
+                let booking = JSON.parse(localStorage.getItem("latest"));
+                // let booking = str[0].myCourses
+                console.log(booking);
                 // prepare your data and then call resolve like this:
                 resolve({
-                  data: JSON.parse(str), // your data array
+                  data: booking, // your data array
                   page: 1, // current page number
                   totalCount: 10 // total page number
                 });
                 //Update state
                 this.setState({
-                  data: JSON.parse(str)
+                  data: booking
                 });
               })
             }
             editable={{              
-              onRowAdd: newData =>
-                new Promise(resolve => {
-                  setTimeout(() => {
-                    //Add item to state
-                    resolve();
-                    let data = [...this.state.data];
-                    console.log(data);
-                    data.push(newData);
-                    console.log(data);
-                    this.setState({ ...this.state, data });
-                    //Send update to back end
-                    this.updateBackEnd(data);
-                  }, 600);
-                }),
-              onRowUpdate: (newData, oldData) =>
-                new Promise(resolve => {
-                  setTimeout(() => {
-                    resolve();
-                    console.log(`Old Data ${JSON.stringify(oldData)}`);
-                    console.log(`New Data ${JSON.stringify(newData)}`);
-                    let data = [...this.state.data];
-                    //find array index of changed item and update
-                    for (var i = 0; i < data.length; i++) {
-                      if (data[i].id === newData.id) {
-                        data[i] = newData;
-                        break;
-                      }
-                    }
-                    console.log("Final: " + JSON.stringify(data));
-                    this.setState({ ...this.state, data });
-                    //Send update to back end
-                    this.updateBackEnd(data);
-                  }, 600);
-                }),
               onRowDelete: oldData =>
                 new Promise(resolve => {
                   setTimeout(() => {
                     resolve();
                     let data = [...this.state.data];
                     data.splice(data.indexOf(oldData), 1);
-                    console.log("tbdData: " + data);
-                    this.setState({ ...this.state, data });
+                    console.log(data);
+                    this.setState({ data: data });
                     //Send update to back end
                     this.updateBackEnd(data);
                   }, 600);
@@ -158,4 +123,4 @@ class MySkills extends Component {
   }
 }
 
-export default withRouter(withStyles(styles)(MySkills));
+export default withRouter(withStyles(styles)(MyBookings));
