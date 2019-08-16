@@ -87,7 +87,7 @@ class TopNav extends Component {
                   to={{ pathname: "/customertech" }}
                   className={classes.button}
                 >
-                  Technologies
+                  Customers
                 </ButtonBase>
                 <ButtonBase
                   id="coursesButton"
