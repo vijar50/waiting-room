@@ -93,6 +93,16 @@ describe("Login Tests", function() {
     });
   });
 
+  it("Click on Account Button > Bookings", async () => {
+    findByIdAndClick("accountButton", driver);
+    await driver.sleep(2000);
+    findByIdAndClick("bookingsLink", driver);
+    await driver.sleep(1000);
+    driver.getCurrentUrl().then(url => {
+      assert.strictEqual(url, "http://localhost:3001/#/mybookings");
+    });
+  });
+
   it("Click on Account Button > Logout", async () => {
     findByIdAndClick("accountButton", driver);
     await driver.sleep(2000);

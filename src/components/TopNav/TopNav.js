@@ -15,6 +15,7 @@ import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import KeyboardArrowDown from "@material-ui/icons/KeyboardArrowDown";
 import IconButton from "@material-ui/core/IconButton";
 
 const styles = myStyles;
@@ -59,7 +60,7 @@ class TopNav extends Component {
       <div className="topNavComponent">
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
-            <Grid container alignItems="baseline">
+            <Grid container md={12} alignItems="baseline">
               <Grid item xs={2} id="siteLogo">
                 <Typography
                   variant="h5"
@@ -106,16 +107,7 @@ class TopNav extends Component {
                   Quiz
                 </ButtonBase>
               </Grid>
-              <Grid item xs={1} className={classes.infoSection}>
-                <Typography
-                  id="loggedInAs"
-                  color="secondary"
-                  className={classes.user}
-                >
-                  {user}
-                </Typography>
-              </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={2} >
                 <IconButton
                   id="accountButton"
                   buttonRef={node => {
@@ -127,6 +119,14 @@ class TopNav extends Component {
                   className={classes.lbutton}
                 >
                   <AccountCircle style={{ fontSize: 34 }} />
+                  <Typography
+                  id="loggedInAs"
+                  color="secondary"
+                  className={classes.user}
+                >
+                  {user}
+                </Typography>
+                  <KeyboardArrowDown style={{ fontSize: 34 }} />
                 </IconButton>
                 <Popper
                   open={openAccount}
