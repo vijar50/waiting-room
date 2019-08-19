@@ -4,8 +4,8 @@
       "id": 1,
       "fName": "Bill",
       "lName": "Bob",
-      "emailAddress": "billy.bob@gmail.com",
-      "phone": "07778894562",
+      "emailAddress": "billy.bob1@gmail.com",
+      "phone": "07778894563",
       "userName": "b",
       "password": "a",
       "confPassword": "a",
@@ -49,16 +49,22 @@
       ],
       "myCourses": [
         {
-          "courseName": "Web Development Fundamentals - Javascript",
-          "formattedBookingDate": "28/8/2019"
-        },
-        {
           "courseName": "LEADING SAFE",
-          "formattedBookingDate": "28/9/2019"
+          "formattedBookingDate": "28/9/2019",
+          "tableData": {
+            "id": 1
+          }
         },
         {
           "courseName": "Developing on AWS",
-          "formattedBookingDate": "3/8/2019"
+          "formattedBookingDate": "3/8/2019",
+          "tableData": {
+            "id": 2
+          }
+        },
+        {
+          "courseName": "Developing Applications using ReactJS",
+          "formattedBookingDate": "21/7/2019"
         }
       ]
     },

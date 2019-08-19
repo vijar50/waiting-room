@@ -4,6 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import MaterialTable from "material-table";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { withRouter } from "react-router-dom";
 import TopNav from "../TopNav/TopNav";
 import myStyles from "./styles";
@@ -18,9 +19,21 @@ class MyBookings extends Component {
         { title: "Course Name", field: "courseName" },
         { title: "Date", field: "formattedBookingDate" }
       ],
-      data: []
+      data: [],
+      loading: true
     };
   }
+
+  componentDidMount = async () => {
+    await setTimeout(
+      () =>
+        this.setState({
+          loading: false
+        }),
+      2000
+    );
+    this.getBackend()
+  };
 
   getBackend = () => {
     //Get record for logged in user
@@ -57,7 +70,7 @@ class MyBookings extends Component {
 
   render() {
     const { classes } = this.props;
-    const { columns } = this.state;
+    const { columns, loading } = this.state;
     const currentPath = this.props.location.pathname;
     console.log(currentPath);
 
@@ -76,47 +89,57 @@ class MyBookings extends Component {
           </Typography>
         </Grid>
         <Grid container className={classes.grid}>
-          <MaterialTable
-            title=""
-            options={{
-              search: false
-            }}
-            columns={columns}
-            data={query =>
-              new Promise(async (resolve, reject) => {
-                // await setTimeout(() => this.getBackend(), 600) 
-                this.getBackend()                
-                // let str = localStorage.getItem("detail");
-                let booking = JSON.parse(localStorage.getItem("latest"));
-                // let booking = str[0].myCourses
-                console.log(booking);
-                // prepare your data and then call resolve like this:
-                resolve({
-                  data: booking, // your data array
-                  page: 1, // current page number
-                  totalCount: 10 // total page number
-                });
-                //Update state
-                this.setState({
-                  data: booking
-                });
-              })
-            }
-            editable={{              
-              onRowDelete: oldData =>
-                new Promise(resolve => {
-                  setTimeout(() => {
-                    resolve();
-                    let data = [...this.state.data];
-                    data.splice(data.indexOf(oldData), 1);
-                    console.log(data);
-                    this.setState({ data: data });
-                    //Send update to back end
-                    this.updateBackEnd(data);
-                  }, 600);
-                })
-            }}
+          {!loading ? (
+ <MaterialTable
+ title=""
+ options={{
+   search: false
+ }}
+ columns={columns}
+ data={query =>
+   new Promise(async (resolve, reject) => {
+     // await setTimeout(() => this.getBackend(), 600) 
+     this.getBackend()                
+     // let str = localStorage.getItem("detail");
+     let booking = JSON.parse(localStorage.getItem("latest"));
+     // let booking = str[0].myCourses
+     console.log(booking);
+     // prepare your data and then call resolve like this:
+     resolve({
+       data: booking, // your data array
+       page: 1, // current page number
+       totalCount: 10 // total page number
+     });
+     //Update state
+     this.setState({
+       data: booking
+     });
+   })
+ }
+ editable={{              
+   onRowDelete: oldData =>
+     new Promise(resolve => {
+       setTimeout(() => {
+         resolve();
+         let data = [...this.state.data];
+         data.splice(data.indexOf(oldData), 1);
+         console.log(data);
+         this.setState({ data: data });
+         //Send update to back end
+         this.updateBackEnd(data);
+       }, 600);
+     })
+ }}
+/>
+
+          ) : (
+            <CircularProgress
+            className={classes.progress}
+            color="secondary"
+            size={80}
           />
+          )}
+         
         </Grid>
       </div>
     );

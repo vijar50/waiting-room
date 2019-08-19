@@ -32,6 +32,7 @@ class Home extends Component {
     let user = JSON.parse(localStorage.getItem("loggedInUser"));
     let courseData = user[0].myCourses;
     localStorage.setItem("detail", JSON.stringify(user[0].skills));
+    localStorage.setItem("mydetails", JSON.stringify(user[0]));
     // console.log(courseData)
     this.setState({
       courses: courseData
