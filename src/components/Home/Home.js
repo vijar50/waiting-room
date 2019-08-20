@@ -21,7 +21,7 @@ class Home extends Component {
 
   
   componentDidMount = async () => {   
-    await setTimeout(() => this.initData(), 2000)    
+    await setTimeout(() => this.initData(), 1000)    
   }
 
   componentWillUnmount() {
@@ -43,7 +43,7 @@ class Home extends Component {
     const { classes } = this.props;
     const { courses } = this.state;
     const currentPath = this.props.location.pathname;
-    console.log(this.state.courses);
+    // console.log(this.state.courses);
     return (
       <div>
         <div className={classes.root}>

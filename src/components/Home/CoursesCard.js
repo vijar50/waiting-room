@@ -39,7 +39,7 @@ class CourseCard extends Component {
         this.setState({
           loading: false
         }),
-      2000
+      1200
     );
   };
 
@@ -97,10 +97,11 @@ class CourseCard extends Component {
           </CardActionArea>
           <CardActions>
             <Button
+              id="editbookings"
               size="small"
               color="secondary"
               component={Link}
-              to={{ pathname: "/courserecs" }}
+              to={{ pathname: "/mybookings" }}
             >
               Edit Bookings
             </Button>

@@ -30,7 +30,7 @@ class MyBookings extends Component {
         this.setState({
           loading: false
         }),
-      2000
+      1200
     );
     this.getBackend()
   };
