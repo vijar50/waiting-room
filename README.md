@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+# Waiting Room App
+### Intro
+This project was designed as a tool to help professionals manage their training and skills for use on client site.
 
 ### `npm start`
 
