@@ -1,5 +1,5 @@
 # Waiting Room App
-### Intro
+### About
 This project was created as a training project for learning React. Its goal is to help professionals manage their training and skills for use on client site. The site also features an editable profile and will eventually feature a quiz. It uses React for the front end and json server as a fake backend. The app also contains selenium (javascript) tests for regression testing.
 
 ### What this project uses
