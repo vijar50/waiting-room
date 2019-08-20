@@ -62,6 +62,7 @@ class QuizCard extends Component {
           </CardActionArea>
           <CardActions>
             <Button
+              id="gotoquizzes"
               size="small"
               color="secondary"
               component={Link}

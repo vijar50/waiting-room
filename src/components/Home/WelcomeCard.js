@@ -43,7 +43,7 @@ class WelcomeCard extends Component {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="secondary" component={Link} to={{pathname: "/courserecs"}}>
+            <Button id="viewcourses" size="small" color="secondary" component={Link} to={{pathname: "/courserecs"}}>
               View Courses
             </Button>
           </CardActions>

@@ -14,7 +14,7 @@ import {
   enterAndClearPassword,
   enterAndClearUsername,
   findByIDAndGetText
-} from "./login.pom";
+} from "./testhelpers";
 // Import requirement packages
 require("chromedriver");
 require("geckodriver");
@@ -26,7 +26,7 @@ describe("Login Tests", function() {
   //setup on each test
   let driver;
   beforeEach(async function() {
-    driver = await new Builder().forBrowser("firefox").build();
+    driver = await new Builder().forBrowser("chrome").build();
     await driver.get(MAIN_URL);
     findByIdAndClick("initLogin", driver);
     await driver.sleep(1000);
