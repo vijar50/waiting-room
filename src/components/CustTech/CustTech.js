@@ -11,21 +11,6 @@ import myStyles from "./styles";
 const styles = myStyles;
 
 class CustTech extends Component {
-  // componentDidMount() {
-  //   //Get record for logged in user
-  //   fetch(
-  //     `http://localhost:3000/users?userName=${localStorage.getItem("username")}`
-  //   )
-  //     .then(
-  //       response => response.json(),
-  //       error => console.log("Error occurred", error)
-  //     )
-  //     //Store the skills locally
-  //     .then(myJson => {
-  //       localStorage.setItem("courses", JSON.stringify(myJson[0].myCourses));
-  //       console.log("My Courses " + JSON.stringify(myJson[0].myCourses));
-  //     });
-  // }
 
   render() {
     const { classes } = this.props;

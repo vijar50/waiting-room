@@ -79,7 +79,7 @@ class Cards extends Component {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="secondary" onClick={this.goToLink}>
+            <Button size="small" color="secondary" onClick={this.goToLink} id={this.props.cardName} url={this.props.externalLink}>
               Learn More
             </Button>
           </CardActions>
