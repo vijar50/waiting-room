@@ -9,7 +9,6 @@ import {
   enterUsername,
   enterPassword,
   findByIdAndClick,
-  findByIdAndCheckAttribute,
   waitUntilElementLocatedById,
   enterAndClearPassword,
   enterAndClearUsername,

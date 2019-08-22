@@ -20,26 +20,22 @@ export const enterAndClearUsername = async (username, webdriver) => {
     .sendKeys(username, Key.BACK_SPACE);
 };
 
-export const enterPassword = async (password, webdriver) => {
-  await webdriver
-    .findElement(By.xpath(PASSWORD))
-    .sendKeys(password, Key.RETURN);
-};
-
 export const enterAndClearPassword = async (password, webdriver) => {
   await webdriver
     .findElement(By.xpath(PASSWORD))
     .sendKeys(password, Key.BACK_SPACE);
 };
 
+export const enterPassword = async (password, webdriver) => {
+  await webdriver
+    .findElement(By.xpath(PASSWORD))
+    .sendKeys(password, Key.RETURN);
+};
+
 export const enterUsername = async (username, webdriver) => {
   await webdriver
     .findElement(By.xpath(USERNAME))
     .sendKeys(username, Key.RETURN);
-};
-
-export const findByIdAndClick = async (locator, webdriver) => {
-  await webdriver.findElement(By.id(locator)).click();
 };
 
 export const findByIdAndCheckAttribute = async (
@@ -53,6 +49,10 @@ export const findByIdAndCheckAttribute = async (
   return JSON.stringify(attr);
 };
 
+export const findByIdAndClick = async (locator, webdriver) => {
+  await webdriver.findElement(By.id(locator)).click();
+};
+
 export const findByIDAndGetText = async (locator, webdriver) => {
   let attr = await webdriver.findElement(By.id(locator)).getText();
   return attr;
@@ -61,11 +61,23 @@ export const findByIDAndGetText = async (locator, webdriver) => {
 export const loginToFrontEnd = async webdriver => {
   enterUsername("b", webdriver);
   enterPassword("a", webdriver);
+  await webdriver.sleep(200);
   findByIdAndClick("loginToSite", webdriver);
   waitUntilElementLocatedById("siteLogo", webdriver);
   await webdriver.sleep(2000);
   let usn = await webdriver.findElement(By.id("loggedInAs")).getText();
   assert.strictEqual(usn, "B");
+};
+
+export const openLinkInNewWindow = async (locator, webdriver) => {
+  let link = await webdriver.findElement(By.id(locator));
+  const actions = webdriver.actions();
+
+  await actions
+    .keyDown(Key.ALT)
+    .keyDown(Key.SHIFT)
+    .click(link)
+    .perform();
 };
 
 export const waitUntilElementLocatedById = async (locator, webdriver) => {
